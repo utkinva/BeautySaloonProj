@@ -129,6 +129,7 @@
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.Size = new System.Drawing.Size(274, 27);
             this.iDTextBox.TabIndex = 4;
+            this.iDTextBox.TabStop = false;
             // 
             // masterIDComboBox
             // 
@@ -142,6 +143,7 @@
             this.masterIDComboBox.Name = "masterIDComboBox";
             this.masterIDComboBox.Size = new System.Drawing.Size(274, 29);
             this.masterIDComboBox.TabIndex = 6;
+            this.masterIDComboBox.TabStop = false;
             this.masterIDComboBox.ValueMember = "ID";
             // 
             // mastersBindingSource
@@ -155,7 +157,7 @@
             this.weekdaysTextBox.Location = new System.Drawing.Point(259, 80);
             this.weekdaysTextBox.Name = "weekdaysTextBox";
             this.weekdaysTextBox.Size = new System.Drawing.Size(274, 27);
-            this.weekdaysTextBox.TabIndex = 10;
+            this.weekdaysTextBox.TabIndex = 0;
             // 
             // weekendTextBox
             // 
@@ -164,7 +166,7 @@
             this.weekendTextBox.Location = new System.Drawing.Point(259, 113);
             this.weekendTextBox.Name = "weekendTextBox";
             this.weekendTextBox.Size = new System.Drawing.Size(274, 27);
-            this.weekendTextBox.TabIndex = 12;
+            this.weekendTextBox.TabIndex = 1;
             // 
             // saveBtn
             // 
@@ -175,7 +177,7 @@
             this.saveBtn.Location = new System.Drawing.Point(16, 229);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(164, 36);
-            this.saveBtn.TabIndex = 13;
+            this.saveBtn.TabIndex = 4;
             this.saveBtn.Text = "Сохранить";
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
@@ -189,7 +191,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(369, 229);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(164, 36);
-            this.cancelBtn.TabIndex = 13;
+            this.cancelBtn.TabIndex = 5;
             this.cancelBtn.Text = "Отмена";
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
@@ -202,7 +204,7 @@
             this.startTimeMaskedTextBox.Mask = "00:00";
             this.startTimeMaskedTextBox.Name = "startTimeMaskedTextBox";
             this.startTimeMaskedTextBox.Size = new System.Drawing.Size(274, 27);
-            this.startTimeMaskedTextBox.TabIndex = 14;
+            this.startTimeMaskedTextBox.TabIndex = 2;
             this.startTimeMaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
             // endTimeMaskedTextBox
@@ -213,7 +215,7 @@
             this.endTimeMaskedTextBox.Mask = "00:00";
             this.endTimeMaskedTextBox.Name = "endTimeMaskedTextBox";
             this.endTimeMaskedTextBox.Size = new System.Drawing.Size(274, 27);
-            this.endTimeMaskedTextBox.TabIndex = 15;
+            this.endTimeMaskedTextBox.TabIndex = 3;
             this.endTimeMaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
             // AddEditScheldule

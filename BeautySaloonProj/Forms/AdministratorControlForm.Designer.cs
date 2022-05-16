@@ -34,6 +34,10 @@
             this.checkOrdersBtn = new System.Windows.Forms.Button();
             this.checkSchelduleBtn = new System.Windows.Forms.Button();
             this.checkClientListBtn = new System.Windows.Forms.Button();
+            this.checkMastersListBtn = new System.Windows.Forms.Button();
+            this.addNewAccountBtn = new System.Windows.Forms.Button();
+            this.checkAccsBtn = new System.Windows.Forms.Button();
+            this.checkServicesBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // logoutBtn
@@ -42,9 +46,9 @@
             this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.logoutBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.logoutBtn.Location = new System.Drawing.Point(12, 340);
+            this.logoutBtn.Location = new System.Drawing.Point(12, 322);
             this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(312, 56);
+            this.logoutBtn.Size = new System.Drawing.Size(635, 56);
             this.logoutBtn.TabIndex = 7;
             this.logoutBtn.Text = "Выйти из учетной записи";
             this.logoutBtn.UseVisualStyleBackColor = false;
@@ -106,13 +110,73 @@
             this.checkClientListBtn.UseVisualStyleBackColor = false;
             this.checkClientListBtn.Click += new System.EventHandler(this.checkClientListBtn_Click);
             // 
+            // checkMastersListBtn
+            // 
+            this.checkMastersListBtn.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.checkMastersListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkMastersListBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkMastersListBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkMastersListBtn.Location = new System.Drawing.Point(330, 12);
+            this.checkMastersListBtn.Name = "checkMastersListBtn";
+            this.checkMastersListBtn.Size = new System.Drawing.Size(312, 56);
+            this.checkMastersListBtn.TabIndex = 8;
+            this.checkMastersListBtn.Text = "Список мастеров";
+            this.checkMastersListBtn.UseVisualStyleBackColor = false;
+            this.checkMastersListBtn.Click += new System.EventHandler(this.checkMastersListBtn_Click);
+            // 
+            // addNewAccountBtn
+            // 
+            this.addNewAccountBtn.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.addNewAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addNewAccountBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addNewAccountBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addNewAccountBtn.Location = new System.Drawing.Point(330, 136);
+            this.addNewAccountBtn.Name = "addNewAccountBtn";
+            this.addNewAccountBtn.Size = new System.Drawing.Size(312, 56);
+            this.addNewAccountBtn.TabIndex = 8;
+            this.addNewAccountBtn.Text = "Добавить новую учетную запись";
+            this.addNewAccountBtn.UseVisualStyleBackColor = false;
+            this.addNewAccountBtn.Click += new System.EventHandler(this.addNewAccountBtn_Click);
+            // 
+            // checkAccsBtn
+            // 
+            this.checkAccsBtn.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.checkAccsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkAccsBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkAccsBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkAccsBtn.Location = new System.Drawing.Point(330, 74);
+            this.checkAccsBtn.Name = "checkAccsBtn";
+            this.checkAccsBtn.Size = new System.Drawing.Size(312, 56);
+            this.checkAccsBtn.TabIndex = 8;
+            this.checkAccsBtn.Text = "Список учетных записей";
+            this.checkAccsBtn.UseVisualStyleBackColor = false;
+            this.checkAccsBtn.Click += new System.EventHandler(this.checkAccsBtn_Click);
+            // 
+            // checkServicesBtn
+            // 
+            this.checkServicesBtn.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.checkServicesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkServicesBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkServicesBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkServicesBtn.Location = new System.Drawing.Point(330, 198);
+            this.checkServicesBtn.Name = "checkServicesBtn";
+            this.checkServicesBtn.Size = new System.Drawing.Size(312, 56);
+            this.checkServicesBtn.TabIndex = 8;
+            this.checkServicesBtn.Text = "Список услуг";
+            this.checkServicesBtn.UseVisualStyleBackColor = false;
+            this.checkServicesBtn.Click += new System.EventHandler(this.checkServicesBtn_Click);
+            // 
             // AdministratorControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(336, 408);
+            this.ClientSize = new System.Drawing.Size(659, 389);
             this.Controls.Add(this.logoutBtn);
+            this.Controls.Add(this.checkAccsBtn);
+            this.Controls.Add(this.addNewAccountBtn);
+            this.Controls.Add(this.checkMastersListBtn);
+            this.Controls.Add(this.checkServicesBtn);
             this.Controls.Add(this.checkClientListBtn);
             this.Controls.Add(this.checkArchiveBtn);
             this.Controls.Add(this.checkOrdersBtn);
@@ -134,5 +198,9 @@
         private System.Windows.Forms.Button checkOrdersBtn;
         private System.Windows.Forms.Button checkSchelduleBtn;
         private System.Windows.Forms.Button checkClientListBtn;
+        private System.Windows.Forms.Button checkMastersListBtn;
+        private System.Windows.Forms.Button addNewAccountBtn;
+        private System.Windows.Forms.Button checkAccsBtn;
+        private System.Windows.Forms.Button checkServicesBtn;
     }
 }

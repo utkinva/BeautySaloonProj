@@ -33,18 +33,27 @@ namespace BeautySaloonProj.Forms
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Удалить выбранную запись из архива?", "Удаление записи", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialog == DialogResult.Yes)
+            if ((OrderHistory)orderHistoryBindingSource.Current != null)
             {
-                OrderHistory order = (OrderHistory)orderHistoryBindingSource.Current;
-                Program.db.OrderHistory.Remove(order);
-                Program.db.SaveChanges();
-                orderHistoryBindingSource.DataSource = Program.db.OrderHistory.ToList();
+                DialogResult dialog = MessageBox.Show("Удалить выбранную запись из архива?", "Удаление записи", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    OrderHistory order = (OrderHistory)orderHistoryBindingSource.Current;
+                    Program.db.OrderHistory.Remove(order);
+                    Program.db.SaveChanges();
+                    orderHistoryBindingSource.DataSource = Program.db.OrderHistory.ToList();
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
+                MessageBox.Show($"Не выбрана ни одна запись в таблице", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
         }
 
         private void scheduleDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)

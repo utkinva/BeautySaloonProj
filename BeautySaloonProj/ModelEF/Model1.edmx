@@ -124,6 +124,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrderHistory_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderHistory">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderHistory_Masters">
+          <End Role="Masters" Type="Self.Masters" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderHistory">
+              <PropertyRef Name="MasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderHistory_Services">
+          <End Role="Services" Type="Self.Services" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderHistory">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Schedule_Masters">
           <End Role="Masters" Type="Self.Masters" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -173,6 +215,18 @@
             <End Role="Services" EntitySet="Services" />
             <End Role="CurrentOrders" EntitySet="CurrentOrders" />
           </AssociationSet>
+          <AssociationSet Name="FK_OrderHistory_Clients" Association="Self.FK_OrderHistory_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="OrderHistory" EntitySet="OrderHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderHistory_Masters" Association="Self.FK_OrderHistory_Masters">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="OrderHistory" EntitySet="OrderHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderHistory_Services" Association="Self.FK_OrderHistory_Services">
+            <End Role="Services" EntitySet="Services" />
+            <End Role="OrderHistory" EntitySet="OrderHistory" />
+          </AssociationSet>
           <AssociationSet Name="FK_Schedule_Masters" Association="Self.FK_Schedule_Masters">
             <End Role="Masters" EntitySet="Masters" />
             <End Role="Schedule" EntitySet="Schedule" />
@@ -199,6 +253,10 @@
             <End Role="Clients" EntitySet="Clients" />
             <End Role="CurrentOrders" EntitySet="CurrentOrders" />
           </AssociationSet>
+          <AssociationSet Name="FK_OrderHistory_Clients" Association="DBModel.FK_OrderHistory_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="OrderHistory" EntitySet="OrderHistory" />
+          </AssociationSet>
           <AssociationSet Name="FK_CurrentOrders_Masters" Association="DBModel.FK_CurrentOrders_Masters">
             <End Role="Masters" EntitySet="Masters" />
             <End Role="CurrentOrders" EntitySet="CurrentOrders" />
@@ -207,9 +265,17 @@
             <End Role="Services" EntitySet="Services" />
             <End Role="CurrentOrders" EntitySet="CurrentOrders" />
           </AssociationSet>
+          <AssociationSet Name="FK_OrderHistory_Masters" Association="DBModel.FK_OrderHistory_Masters">
+            <End Role="Masters" EntitySet="Masters" />
+            <End Role="OrderHistory" EntitySet="OrderHistory" />
+          </AssociationSet>
           <AssociationSet Name="FK_Schedule_Masters" Association="DBModel.FK_Schedule_Masters">
             <End Role="Masters" EntitySet="Masters" />
             <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderHistory_Services" Association="DBModel.FK_OrderHistory_Services">
+            <End Role="Services" EntitySet="Services" />
+            <End Role="OrderHistory" EntitySet="OrderHistory" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_UserTypes" Association="DBModel.FK_Users_UserTypes">
             <End Role="UserTypes" EntitySet="UserTypes" />
@@ -225,6 +291,7 @@
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CurrentOrders" Relationship="DBModel.FK_CurrentOrders_Clients" FromRole="Clients" ToRole="CurrentOrders" />
+          <NavigationProperty Name="OrderHistory" Relationship="DBModel.FK_OrderHistory_Clients" FromRole="Clients" ToRole="OrderHistory" />
         </EntityType>
         <EntityType Name="CurrentOrders">
           <Key>
@@ -249,6 +316,7 @@
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Specialization" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CurrentOrders" Relationship="DBModel.FK_CurrentOrders_Masters" FromRole="Masters" ToRole="CurrentOrders" />
+          <NavigationProperty Name="OrderHistory" Relationship="DBModel.FK_OrderHistory_Masters" FromRole="Masters" ToRole="OrderHistory" />
           <NavigationProperty Name="Schedule" Relationship="DBModel.FK_Schedule_Masters" FromRole="Masters" ToRole="Schedule" />
         </EntityType>
         <EntityType Name="OrderHistory">
@@ -261,6 +329,9 @@
           <Property Name="MasterID" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Time" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Clients" Relationship="DBModel.FK_OrderHistory_Clients" FromRole="OrderHistory" ToRole="Clients" />
+          <NavigationProperty Name="Masters" Relationship="DBModel.FK_OrderHistory_Masters" FromRole="OrderHistory" ToRole="Masters" />
+          <NavigationProperty Name="Services" Relationship="DBModel.FK_OrderHistory_Services" FromRole="OrderHistory" ToRole="Services" />
         </EntityType>
         <EntityType Name="Schedule">
           <Key>
@@ -283,6 +354,7 @@
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CurrentOrders" Relationship="DBModel.FK_CurrentOrders_Services" FromRole="Services" ToRole="CurrentOrders" />
+          <NavigationProperty Name="OrderHistory" Relationship="DBModel.FK_OrderHistory_Services" FromRole="Services" ToRole="OrderHistory" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -317,6 +389,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrderHistory_Clients">
+          <End Type="DBModel.Clients" Role="Clients" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBModel.OrderHistory" Role="OrderHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderHistory">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CurrentOrders_Masters">
           <End Type="DBModel.Masters" Role="Masters" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -345,6 +431,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrderHistory_Masters">
+          <End Type="DBModel.Masters" Role="Masters" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBModel.OrderHistory" Role="OrderHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderHistory">
+              <PropertyRef Name="MasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Schedule_Masters">
           <End Type="DBModel.Masters" Role="Masters" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -356,6 +456,20 @@
             </Principal>
             <Dependent Role="Schedule">
               <PropertyRef Name="MasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderHistory_Services">
+          <End Type="DBModel.Services" Role="Services" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBModel.OrderHistory" Role="OrderHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderHistory">
+              <PropertyRef Name="ServiceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

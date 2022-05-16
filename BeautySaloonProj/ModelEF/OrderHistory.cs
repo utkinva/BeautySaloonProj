@@ -20,5 +20,9 @@ namespace BeautySaloonProj.ModelEF
         public int MasterID { get; set; }
         public System.DateTime Date { get; set; }
         public System.TimeSpan Time { get; set; }
+    
+        public virtual Clients Clients { get; set; }
+        public virtual Masters Masters { get; set; }
+        public virtual Services Services { get; set; }
     }
 }

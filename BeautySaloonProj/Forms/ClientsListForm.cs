@@ -30,26 +30,44 @@ namespace BeautySaloonProj.Forms
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            Clients itemToDelete = (Clients)clientsBindingSource.Current;
-            DialogResult dialogResult = MessageBox.Show($"Удалить клиента №{itemToDelete.ID}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dialogResult == DialogResult.Yes)
+            if ((Clients)clientsBindingSource.Current != null)
             {
-                Program.db.Clients.Remove(itemToDelete);
-                Program.db.SaveChanges();
-                clientsBindingSource.DataSource = Program.db.Clients.ToList();
+                Clients itemToDelete = (Clients)clientsBindingSource.Current;
+                DialogResult dialogResult = MessageBox.Show($"Удалить клиента №{itemToDelete.ID}?\nУдаление клиента приведет к удалению всех его текущих записей, а также истории выполненных заказов этого клиента", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Program.db.Clients.Remove(itemToDelete);
+                    Program.db.SaveChanges();
+                    clientsBindingSource.DataSource = Program.db.Clients.ToList();
+                }
+                else
+                    return;
             }
             else
+            {
+                MessageBox.Show($"Не выбрана ни одна запись в таблице", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            AddEditClientForm editClient = new AddEditClientForm((Clients)clientsBindingSource.Current);
-            DialogResult dialog = editClient.ShowDialog();
-            if (dialog == DialogResult.OK)
+            if ((Clients)clientsBindingSource.Current != null)
             {
-                clientsBindingSource.DataSource = Program.db.Clients.ToList();
+                AddEditClientForm editClient = new AddEditClientForm((Clients)clientsBindingSource.Current);
+                DialogResult dialog = editClient.ShowDialog();
+                if (dialog == DialogResult.OK)
+                {
+                    clientsBindingSource.DataSource = Program.db.Clients.ToList();
+                }
             }
+            else
+            {
+                MessageBox.Show($"Не выбрана ни одна запись в таблице", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
         }
 
         private void addBtn_Click(object sender, EventArgs e)

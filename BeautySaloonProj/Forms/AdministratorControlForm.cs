@@ -56,5 +56,29 @@ namespace BeautySaloonProj.Forms
             ClientsListForm clientsList = new ClientsListForm();
             clientsList.ShowDialog();
         }
+
+        private void checkMastersListBtn_Click(object sender, EventArgs e)
+        {
+            MastersListForm mastersList = new MastersListForm();
+            mastersList.ShowDialog();
+        }
+
+        private void addNewAccountBtn_Click(object sender, EventArgs e)
+        {
+            AddNewAccount addAccount = new AddNewAccount();
+            addAccount.ShowDialog();
+        }
+
+        private void checkAccsBtn_Click(object sender, EventArgs e)
+        {
+            AccountsListForm accountsList = new AccountsListForm();
+            accountsList.ShowDialog();
+        }
+
+        private void checkServicesBtn_Click(object sender, EventArgs e)
+        {
+            ServicesListForm servicesList = new ServicesListForm();
+            servicesList.ShowDialog();
+        }
     }
 }

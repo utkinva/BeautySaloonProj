@@ -210,6 +210,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "OrdersHistoryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Архив заказов";
             this.Load += new System.EventHandler(this.OrdersHistoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.scheduleDataGridView)).EndInit();

@@ -18,6 +18,7 @@ namespace BeautySaloonProj.ModelEF
         public Masters()
         {
             this.CurrentOrders = new HashSet<CurrentOrders>();
+            this.OrderHistory = new HashSet<OrderHistory>();
             this.Schedule = new HashSet<Schedule>();
         }
     
@@ -28,6 +29,8 @@ namespace BeautySaloonProj.ModelEF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CurrentOrders> CurrentOrders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderHistory> OrderHistory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schedule> Schedule { get; set; }
     }

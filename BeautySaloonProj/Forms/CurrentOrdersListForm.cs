@@ -45,28 +45,37 @@ namespace BeautySaloonProj.Forms
 
         private void archiveBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Переместить выбранную запись в архив?", "Перенести в архив", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialog == DialogResult.Yes)
+            if ((CurrentOrders)currentOrdersBindingSource.Current != null)
             {
-                CurrentOrders order = (CurrentOrders)currentOrdersBindingSource.Current;
-                OrderHistory archivedOrder = new OrderHistory();
+                DialogResult dialog = MessageBox.Show("Переместить выбранную запись в архив?", "Перенести в архив", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    CurrentOrders order = (CurrentOrders)currentOrdersBindingSource.Current;
+                    OrderHistory archivedOrder = new OrderHistory();
 
-                archivedOrder.ClientID = order.ClientID;
-                archivedOrder.ServiceID = order.ServiceID;
-                archivedOrder.MasterID = order.MasterID;
-                archivedOrder.Date = order.Date;
-                archivedOrder.Time = order.Time;
+                    archivedOrder.ClientID = order.ClientID;
+                    archivedOrder.ServiceID = order.ServiceID;
+                    archivedOrder.MasterID = order.MasterID;
+                    archivedOrder.Date = order.Date;
+                    archivedOrder.Time = order.Time;
 
-                Program.db.CurrentOrders.Remove(order);
-                Program.db.OrderHistory.Add(archivedOrder);
+                    Program.db.CurrentOrders.Remove(order);
+                    Program.db.OrderHistory.Add(archivedOrder);
 
-                Program.db.SaveChanges();
-                currentOrdersBindingSource.DataSource = Program.db.CurrentOrders.ToList();
+                    Program.db.SaveChanges();
+                    currentOrdersBindingSource.DataSource = Program.db.CurrentOrders.ToList();
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
+                MessageBox.Show($"Не выбрана ни одна запись в таблице", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -75,34 +84,54 @@ namespace BeautySaloonProj.Forms
             DialogResult dialog = addOrder.ShowDialog();
             if (dialog == DialogResult.OK)
             {
+                clientsBindingSource.DataSource = Program.db.Clients.ToList();
                 currentOrdersBindingSource.DataSource = Program.db.CurrentOrders.ToList();
             }
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            AddEditOrderForm addOrder = new AddEditOrderForm((CurrentOrders)currentOrdersBindingSource.Current);
-            DialogResult dialog = addOrder.ShowDialog();
-            if (dialog == DialogResult.OK)
+            if ((CurrentOrders)currentOrdersBindingSource.Current != null)
             {
-                currentOrdersBindingSource.DataSource = Program.db.CurrentOrders.ToList();
+                AddEditOrderForm addOrder = new AddEditOrderForm((CurrentOrders)currentOrdersBindingSource.Current);
+                DialogResult dialog = addOrder.ShowDialog();
+                if (dialog == DialogResult.OK)
+                {
+                    clientsBindingSource.DataSource = Program.db.Clients.ToList();
+                    currentOrdersBindingSource.DataSource = Program.db.CurrentOrders.ToList();
+                }
             }
+            else
+            {
+                MessageBox.Show($"Не выбрана ни одна запись в таблице", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Удалить выбранную запись?", "Удаление записи", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialog == DialogResult.Yes)
+            if ((CurrentOrders)currentOrdersBindingSource.Current != null)
             {
-                CurrentOrders order = (CurrentOrders)currentOrdersBindingSource.Current;
-                Program.db.CurrentOrders.Remove(order);
-                Program.db.SaveChanges();
-                currentOrdersBindingSource.DataSource = Program.db.CurrentOrders.ToList();
+                DialogResult dialog = MessageBox.Show("Удалить выбранную запись?", "Удаление записи", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    CurrentOrders order = (CurrentOrders)currentOrdersBindingSource.Current;
+                    Program.db.CurrentOrders.Remove(order);
+                    Program.db.SaveChanges();
+                    currentOrdersBindingSource.DataSource = Program.db.CurrentOrders.ToList();
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
+                MessageBox.Show($"Не выбрана ни одна запись в таблице", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
         }
 
         private void currentOrdersDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)

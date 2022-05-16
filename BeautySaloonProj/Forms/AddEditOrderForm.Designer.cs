@@ -133,6 +133,7 @@
             this.clientIDComboBox.Name = "clientIDComboBox";
             this.clientIDComboBox.Size = new System.Drawing.Size(363, 29);
             this.clientIDComboBox.TabIndex = 2;
+            this.clientIDComboBox.TabStop = false;
             this.clientIDComboBox.ValueMember = "ID";
             // 
             // currentOrdersBindingSource
@@ -151,7 +152,7 @@
             this.dateMaskedTextBox.Mask = "00/00/0000";
             this.dateMaskedTextBox.Name = "dateMaskedTextBox";
             this.dateMaskedTextBox.Size = new System.Drawing.Size(363, 27);
-            this.dateMaskedTextBox.TabIndex = 4;
+            this.dateMaskedTextBox.TabIndex = 0;
             this.dateMaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
             // iDTextBox
@@ -163,6 +164,7 @@
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.Size = new System.Drawing.Size(363, 27);
             this.iDTextBox.TabIndex = 6;
+            this.iDTextBox.TabStop = false;
             // 
             // masterIDComboBox
             // 
@@ -176,6 +178,7 @@
             this.masterIDComboBox.Name = "masterIDComboBox";
             this.masterIDComboBox.Size = new System.Drawing.Size(363, 29);
             this.masterIDComboBox.TabIndex = 8;
+            this.masterIDComboBox.TabStop = false;
             this.masterIDComboBox.ValueMember = "ID";
             // 
             // mastersBindingSource
@@ -194,6 +197,7 @@
             this.serviceIDComboBox.Name = "serviceIDComboBox";
             this.serviceIDComboBox.Size = new System.Drawing.Size(363, 29);
             this.serviceIDComboBox.TabIndex = 10;
+            this.serviceIDComboBox.TabStop = false;
             this.serviceIDComboBox.ValueMember = "ID";
             // 
             // servicesBindingSource
@@ -208,7 +212,7 @@
             this.timeMaskedTextBox.Mask = "00:00";
             this.timeMaskedTextBox.Name = "timeMaskedTextBox";
             this.timeMaskedTextBox.Size = new System.Drawing.Size(363, 27);
-            this.timeMaskedTextBox.TabIndex = 12;
+            this.timeMaskedTextBox.TabIndex = 1;
             this.timeMaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
             // cancelBtn
@@ -220,7 +224,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(319, 239);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(164, 43);
-            this.cancelBtn.TabIndex = 13;
+            this.cancelBtn.TabIndex = 4;
             this.cancelBtn.Text = "Закрыть";
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
@@ -234,7 +238,7 @@
             this.saveBtn.Location = new System.Drawing.Point(120, 239);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(164, 43);
-            this.saveBtn.TabIndex = 14;
+            this.saveBtn.TabIndex = 3;
             this.saveBtn.Text = "Сохранить";
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
@@ -249,6 +253,7 @@
             this.newClientBtn.Name = "newClientBtn";
             this.newClientBtn.Size = new System.Drawing.Size(139, 29);
             this.newClientBtn.TabIndex = 14;
+            this.newClientBtn.TabStop = false;
             this.newClientBtn.Text = "Новый клиент";
             this.newClientBtn.UseVisualStyleBackColor = false;
             this.newClientBtn.Click += new System.EventHandler(this.newClientBtn_Click);

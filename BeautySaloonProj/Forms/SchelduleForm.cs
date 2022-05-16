@@ -50,25 +50,42 @@ namespace BeautySaloonProj.Forms
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            Schedule itemToDelete = (Schedule)scheduleBindingSource.Current;
-            DialogResult dialogResult = MessageBox.Show($"Удалить график №{itemToDelete.ID}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dialogResult == DialogResult.Yes)
+            if ((Schedule)scheduleBindingSource.Current != null)
             {
-                Program.db.Schedule.Remove(itemToDelete);
-                Program.db.SaveChanges();
-                scheduleBindingSource.DataSource = Program.db.Schedule.ToList();
+                Schedule itemToDelete = (Schedule)scheduleBindingSource.Current;
+                DialogResult dialogResult = MessageBox.Show($"Удалить график №{itemToDelete.ID}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Program.db.Schedule.Remove(itemToDelete);
+                    Program.db.SaveChanges();
+                    scheduleBindingSource.DataSource = Program.db.Schedule.ToList();
+                }
+                else
+                    return;
             }
             else
+            {
+                MessageBox.Show($"Не выбрана ни одна запись в таблице", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            AddEditScheldule editScheldule = new AddEditScheldule((Schedule)scheduleBindingSource.Current);
-            DialogResult dialogResult = editScheldule.ShowDialog();
-            if (dialogResult == DialogResult.OK)
+            if ((Schedule)scheduleBindingSource.Current != null)
             {
-                scheduleBindingSource.DataSource = Program.db.Schedule.ToList();
+                AddEditScheldule editScheldule = new AddEditScheldule((Schedule)scheduleBindingSource.Current);
+                DialogResult dialogResult = editScheldule.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    scheduleBindingSource.DataSource = Program.db.Schedule.ToList();
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Не выбрана ни одна запись в таблице", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
