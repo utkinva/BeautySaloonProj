@@ -20,24 +20,23 @@ namespace BeautySaloonProj.Forms
 
         private void SchelduleForm_Load(object sender, EventArgs e)
         {
+            if (Program.currentUser.UserTypeID == 3)
+            {
+                addBtn.Visible = true;
+                editBtn.Visible = true;
+                deleteBtn.Visible = true;
+            }
+            else
+            {
+                addBtn.Visible = false;
+                editBtn.Visible = false;
+                deleteBtn.Visible = false;
+            }
+
             mastersBindingSource.DataSource = Program.db.Masters.ToList();
             scheduleBindingSource.DataSource = Program.db.Schedule.ToList();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void checkSchelduleBtn_Click(object sender, EventArgs e)
-        {
-            AddEditScheldule editScheldule = new AddEditScheldule((Schedule)scheduleBindingSource.Current);
-            DialogResult dialogResult = editScheldule.ShowDialog();
-            if (dialogResult == DialogResult.OK)
-            {
-                scheduleBindingSource.DataSource = Program.db.Schedule.ToList();
-            }
-        }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
@@ -61,6 +60,21 @@ namespace BeautySaloonProj.Forms
             }
             else
                 return;
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            AddEditScheldule editScheldule = new AddEditScheldule((Schedule)scheduleBindingSource.Current);
+            DialogResult dialogResult = editScheldule.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                scheduleBindingSource.DataSource = Program.db.Schedule.ToList();
+            }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

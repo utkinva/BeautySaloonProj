@@ -35,31 +35,30 @@ namespace BeautySaloonProj.Forms
             if (String.IsNullOrWhiteSpace(passwordTextBox.Text))
                 errorsLog.AppendLine("Заполните поле пароль");
 
+            if (errorsLog.Length != 0)
+            {
+                MessageBox.Show($"Не удалось авторизоваться: \n{errorsLog}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Program.currentUser = Program.db.Users.Find(loginTextBox.Text);
 
             if (Program.currentUser != null)
             {
-                if (Program.currentUser.Login == Program.currentUser.Login)
+                if (Program.currentUser.Password == passwordTextBox.Text)
                 {
-                    if (Program.currentUser.Password == Program.currentUser.Password)
-                    {
-                        MessageBox.Show($"Добро пожаловать, {Program.currentUser.Name}!");
-                        DialogResult = DialogResult.OK;
-                    }
-                    else
-                    {
-                        errorsLog.AppendLine("Неверный пароль");
-                    }
+                    MessageBox.Show($"Добро пожаловать, {Program.currentUser.Name}!");
+                    DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    errorsLog.AppendLine("Пользователя с таким логином не существует");
+                    MessageBox.Show("Неверный пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
-
-            if (errorsLog.Length != 0)
+            else
             {
-                MessageBox.Show($"Не удалось авторизоваться: \n{errorsLog}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Пользователя с таким логином не существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }

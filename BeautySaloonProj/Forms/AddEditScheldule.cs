@@ -20,14 +20,10 @@ namespace BeautySaloonProj.Forms
             if (scheduleParam != null)
             {
                 currentScheldule = scheduleParam;
-                //scheduleBindingSource.Add(currentScheldule);
-                //this.Text = "Редактировать график работы";
             }
             else
             {
                 currentScheldule = new Schedule();
-                //scheduleBindingSource.AddNew();
-                //this.Text = "Создать график работы";
             }
         }
 
@@ -58,10 +54,10 @@ namespace BeautySaloonProj.Forms
                 errorsLog.AppendLine("Выберите мастера");
             if (String.IsNullOrWhiteSpace(weekdaysTextBox.Text))
                 errorsLog.AppendLine("Заполните рабочие дни");
-            if (startTimeMaskedTextBox.Text.Length < 5)
-                errorsLog.AppendLine("Время начала работы имеет неверный формат");
-            if (endTimeMaskedTextBox.Text.Length < 5)
-                errorsLog.AppendLine("Время окончания работы имеет неверный формат");
+            if (startTimeMaskedTextBox.Text.Length != 5)
+                errorsLog.AppendLine("Заполните время начала работы");
+            if (endTimeMaskedTextBox.Text.Length != 5)
+                errorsLog.AppendLine("Заполните время окончания работы");
 
 
             if (errorsLog.Length != 0)
@@ -78,7 +74,7 @@ namespace BeautySaloonProj.Forms
             try
             {
                 Program.db.SaveChanges();
-                MessageBox.Show("Данные успешно сохранены");
+                MessageBox.Show("Данные успешно сохранены", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
             }
             catch (Exception ex)

@@ -11,9 +11,9 @@ using BeautySaloonProj.ModelEF;
 
 namespace BeautySaloonProj.Forms
 {
-    public partial class RegistrationForm : Form
+    public partial class AddNewAccount : Form
     {
-        public RegistrationForm()
+        public AddNewAccount()
         {
             InitializeComponent();
         }
@@ -66,6 +66,7 @@ namespace BeautySaloonProj.Forms
             {
                 Program.db.Users.Add((Users)usersBindingSource.Current);
                 Program.db.SaveChanges();
+                MessageBox.Show("Учетная запись зарегистрирована", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
             }
             catch (Exception ex)

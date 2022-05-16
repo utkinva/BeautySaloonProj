@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label loginLabel;
             System.Windows.Forms.Label passwordLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.loginTextBox = new System.Windows.Forms.TextBox();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             loginLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -44,73 +45,79 @@
             // loginLabel
             // 
             loginLabel.AutoSize = true;
-            loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            loginLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             loginLabel.Location = new System.Drawing.Point(12, 18);
             loginLabel.Name = "loginLabel";
-            loginLabel.Size = new System.Drawing.Size(59, 20);
+            loginLabel.Size = new System.Drawing.Size(61, 21);
             loginLabel.TabIndex = 1;
             loginLabel.Text = "Логин:";
-            // 
-            // loginTextBox
-            // 
-            this.loginTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Login", true));
-            this.loginTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginTextBox.Location = new System.Drawing.Point(100, 12);
-            this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(182, 26);
-            this.loginTextBox.TabIndex = 2;
             // 
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            passwordLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             passwordLabel.Location = new System.Drawing.Point(12, 50);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(71, 20);
+            passwordLabel.Size = new System.Drawing.Size(74, 21);
             passwordLabel.TabIndex = 3;
             passwordLabel.Text = "Пароль:";
             // 
-            // passwordTextBox
+            // loginTextBox
             // 
-            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Password", true));
-            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordTextBox.Location = new System.Drawing.Point(100, 44);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(182, 26);
-            this.passwordTextBox.TabIndex = 4;
-            // 
-            // loginBtn
-            // 
-            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginBtn.Location = new System.Drawing.Point(12, 84);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(122, 38);
-            this.loginBtn.TabIndex = 5;
-            this.loginBtn.Text = "Войти";
-            this.loginBtn.UseVisualStyleBackColor = true;
-            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelBtn.Location = new System.Drawing.Point(160, 84);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(122, 38);
-            this.cancelBtn.TabIndex = 5;
-            this.cancelBtn.Text = "Отмена";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.loginTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Login", true));
+            this.loginTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loginTextBox.Location = new System.Drawing.Point(100, 12);
+            this.loginTextBox.Name = "loginTextBox";
+            this.loginTextBox.Size = new System.Drawing.Size(182, 27);
+            this.loginTextBox.TabIndex = 0;
             // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataSource = typeof(BeautySaloonProj.ModelEF.Users);
             // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Password", true));
+            this.passwordTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordTextBox.Location = new System.Drawing.Point(100, 44);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(182, 27);
+            this.passwordTextBox.TabIndex = 1;
+            // 
+            // loginBtn
+            // 
+            this.loginBtn.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loginBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.loginBtn.Location = new System.Drawing.Point(12, 84);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(122, 38);
+            this.loginBtn.TabIndex = 2;
+            this.loginBtn.Text = "Войти";
+            this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cancelBtn.Location = new System.Drawing.Point(160, 84);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(122, 38);
+            this.cancelBtn.TabIndex = 3;
+            this.cancelBtn.Text = "Отмена";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightPink;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(294, 134);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.loginBtn);
@@ -119,10 +126,11 @@
             this.Controls.Add(passwordLabel);
             this.Controls.Add(this.passwordTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Логин";
+            this.Text = "Вход в учетную запись";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);

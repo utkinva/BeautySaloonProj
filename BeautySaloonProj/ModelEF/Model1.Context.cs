@@ -31,7 +31,6 @@ namespace BeautySaloonProj.ModelEF
         public virtual DbSet<OrderHistory> OrderHistory { get; set; }
         public virtual DbSet<Schedule> Schedule { get; set; }
         public virtual DbSet<Services> Services { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UserTypes> UserTypes { get; set; }
     }

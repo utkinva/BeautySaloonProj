@@ -16,8 +16,8 @@ namespace BeautySaloonProj.ModelEF
     {
         public int ID { get; set; }
         public int MasterID { get; set; }
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
+        public System.TimeSpan StartTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
         public string Weekdays { get; set; }
         public string Weekend { get; set; }
     

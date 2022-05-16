@@ -16,5 +16,45 @@ namespace BeautySaloonProj.Forms
         {
             InitializeComponent();
         }
+        private void checkSchelduleBtn_Click(object sender, EventArgs e)
+        {
+            SchelduleForm schelduleForm = new SchelduleForm();
+            schelduleForm.ShowDialog();
+        }
+
+        private void checkOrdersBtn_Click(object sender, EventArgs e)
+        {
+            CurrentOrdersListForm clientOrdersForm = new CurrentOrdersListForm();
+            clientOrdersForm.ShowDialog();
+        }
+
+        private void checkArchiveBtn_Click(object sender, EventArgs e)
+        {
+            OrdersHistoryForm ordersHistory = new OrdersHistoryForm();
+            ordersHistory.ShowDialog();
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Выйти из учетной записи", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                Program.currentUser = null;
+                this.Close();
+                AuthorizationForm authorizationForm = new AuthorizationForm();
+                authorizationForm.Show();
+            }
+            else
+            {
+                return;
+            }
+
+        }
+
+        private void checkClientListBtn_Click(object sender, EventArgs e)
+        {
+            ClientsListForm clientsList = new ClientsListForm();
+            clientsList.ShowDialog();
+        }
     }
 }
