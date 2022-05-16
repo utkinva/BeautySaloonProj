@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [BSDB]    Script Date: 13.05.2022 0:12:41 ******/
+/****** Object:  Database [BSDB]    Script Date: 16.05.2022 12:57:10 ******/
 CREATE DATABASE [BSDB]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [BSDB] SET QUERY_STORE = OFF
 GO
 USE [BSDB]
 GO
-/****** Object:  Table [dbo].[Clients]    Script Date: 13.05.2022 0:12:41 ******/
+/****** Object:  Table [dbo].[Clients]    Script Date: 16.05.2022 12:57:10 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[Clients](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CurrentOrders]    Script Date: 13.05.2022 0:12:41 ******/
+/****** Object:  Table [dbo].[CurrentOrders]    Script Date: 16.05.2022 12:57:10 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -107,13 +107,14 @@ CREATE TABLE [dbo].[CurrentOrders](
 	[ClientID] [int] NOT NULL,
 	[MasterID] [int] NOT NULL,
 	[Date] [date] NOT NULL,
+	[Time] [time](7) NOT NULL,
  CONSTRAINT [PK_CurrentOrders] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Masters]    Script Date: 13.05.2022 0:12:41 ******/
+/****** Object:  Table [dbo].[Masters]    Script Date: 16.05.2022 12:57:10 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -129,7 +130,7 @@ CREATE TABLE [dbo].[Masters](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[OrderHistory]    Script Date: 13.05.2022 0:12:41 ******/
+/****** Object:  Table [dbo].[OrderHistory]    Script Date: 16.05.2022 12:57:10 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -140,13 +141,14 @@ CREATE TABLE [dbo].[OrderHistory](
 	[ClientID] [int] NOT NULL,
 	[MasterID] [int] NOT NULL,
 	[Date] [date] NOT NULL,
+	[Time] [time](7) NOT NULL,
  CONSTRAINT [PK_OrderHistory] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Schedule]    Script Date: 13.05.2022 0:12:41 ******/
+/****** Object:  Table [dbo].[Schedule]    Script Date: 16.05.2022 12:57:10 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,8 +156,8 @@ GO
 CREATE TABLE [dbo].[Schedule](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[MasterID] [int] NOT NULL,
-	[StartTime] [nvarchar](50) NULL,
-	[EndTime] [nvarchar](50) NULL,
+	[StartTime] [time](7) NOT NULL,
+	[EndTime] [time](7) NOT NULL,
 	[Weekdays] [nvarchar](50) NOT NULL,
 	[Weekend] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Schedule] PRIMARY KEY CLUSTERED 
@@ -164,7 +166,7 @@ CREATE TABLE [dbo].[Schedule](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Services]    Script Date: 13.05.2022 0:12:41 ******/
+/****** Object:  Table [dbo].[Services]    Script Date: 16.05.2022 12:57:10 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -180,7 +182,7 @@ CREATE TABLE [dbo].[Services](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 13.05.2022 0:12:41 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 16.05.2022 12:57:10 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -196,7 +198,7 @@ CREATE TABLE [dbo].[Users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserTypes]    Script Date: 13.05.2022 0:12:41 ******/
+/****** Object:  Table [dbo].[UserTypes]    Script Date: 16.05.2022 12:57:10 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -213,53 +215,43 @@ CREATE TABLE [dbo].[UserTypes](
 GO
 SET IDENTITY_INSERT [dbo].[Clients] ON 
 GO
-INSERT [dbo].[Clients] ([ID], [Name], [Phone], [Email]) VALUES (1, N'Лаврова Светлана Александровна', N'89223823485', NULL)
+INSERT [dbo].[Clients] ([ID], [Name], [Phone], [Email]) VALUES (9, N'Иван', N'+7 (955) 065-16-55', NULL)
 GO
 SET IDENTITY_INSERT [dbo].[Clients] OFF
 GO
 SET IDENTITY_INSERT [dbo].[CurrentOrders] ON 
 GO
-INSERT [dbo].[CurrentOrders] ([ID], [ServiceID], [ClientID], [MasterID], [Date]) VALUES (1, 1, 1, 1, CAST(N'2022-05-12' AS Date))
+INSERT [dbo].[CurrentOrders] ([ID], [ServiceID], [ClientID], [MasterID], [Date], [Time]) VALUES (13, 3, 9, 9, CAST(N'2020-05-15' AS Date), CAST(N'20:55:00' AS Time))
 GO
 SET IDENTITY_INSERT [dbo].[CurrentOrders] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Masters] ON 
 GO
-INSERT [dbo].[Masters] ([ID], [Name], [Phone], [Specialization]) VALUES (1, N'Асминкина Алеся Андреевна', N'89056687795', N'Мастер ногтевого сервиса')
-GO
-INSERT [dbo].[Masters] ([ID], [Name], [Phone], [Specialization]) VALUES (4, N'Дорофеева Алина Георгиевна', N'89664516298', N'Мастер ногтевого сервиса')
-GO
-INSERT [dbo].[Masters] ([ID], [Name], [Phone], [Specialization]) VALUES (5, N'Макаров Вячеслав Сергеевич', N'89669546641', N'Парикмахер')
+INSERT [dbo].[Masters] ([ID], [Name], [Phone], [Specialization]) VALUES (9, N'Алексей', N'+7 (951) 515-11-19', N'Парикмахер')
 GO
 SET IDENTITY_INSERT [dbo].[Masters] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Schedule] ON 
 GO
-INSERT [dbo].[Schedule] ([ID], [MasterID], [StartTime], [EndTime], [Weekdays], [Weekend]) VALUES (1, 1, N'11:45', N'18:00', N'ПН, ВТ, СР. ЧТ', N'ПТ, СБ, ВС')
-GO
-INSERT [dbo].[Schedule] ([ID], [MasterID], [StartTime], [EndTime], [Weekdays], [Weekend]) VALUES (2, 4, N'14:00', N'22:00', N'ПН, ВТ, СР, ЧТ, ПТ', N'СБ, ВС')
-GO
-INSERT [dbo].[Schedule] ([ID], [MasterID], [StartTime], [EndTime], [Weekdays], [Weekend]) VALUES (3, 5, N'09:00', N'17:00', N'ПН, ВТ, СР, ЧТ, ПТ', N'СБ, ВС')
+INSERT [dbo].[Schedule] ([ID], [MasterID], [StartTime], [EndTime], [Weekdays], [Weekend]) VALUES (31, 9, CAST(N'15:00:00' AS Time), CAST(N'12:00:00' AS Time), N'ПН, ВТ, СР, ЧТ, ПТ', N'СБ, ВС')
 GO
 SET IDENTITY_INSERT [dbo].[Schedule] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Services] ON 
 GO
-INSERT [dbo].[Services] ([ID], [Title], [Cost], [Description]) VALUES (1, N'Окраска волос', CAST(2500 AS Decimal(18, 0)), NULL)
-GO
-INSERT [dbo].[Services] ([ID], [Title], [Cost], [Description]) VALUES (2, N'Наращивание ногтей', CAST(5000 AS Decimal(18, 0)), NULL)
+INSERT [dbo].[Services] ([ID], [Title], [Cost], [Description]) VALUES (3, N'Стрижка', CAST(500 AS Decimal(18, 0)), NULL)
 GO
 SET IDENTITY_INSERT [dbo].[Services] OFF
 GO
-INSERT [dbo].[Users] ([Login], [Password], [UserTypeID], [Name]) VALUES (N'admin', N'admin', 1, N'Шевченко Алексей Сергеевич')
+INSERT [dbo].[Users] ([Login], [Password], [UserTypeID], [Name]) VALUES (N'admin', N'admin', 3, N'Алексеев С. А.')
 GO
-INSERT [dbo].[Users] ([Login], [Password], [UserTypeID], [Name]) VALUES (N'seregamaster', N'seregamaster', 2, N'Шпак Сергей Сергеевич')
+INSERT [dbo].[Users] ([Login], [Password], [UserTypeID], [Name]) VALUES (N'master', N'master', 2, N'Шпак Сергей Сергеевич')
 GO
 SET IDENTITY_INSERT [dbo].[UserTypes] ON 
 GO
-INSERT [dbo].[UserTypes] ([ID], [Title], [Description]) VALUES (1, N'Администратор', NULL)
-GO
 INSERT [dbo].[UserTypes] ([ID], [Title], [Description]) VALUES (2, N'Мастер', NULL)
+GO
+INSERT [dbo].[UserTypes] ([ID], [Title], [Description]) VALUES (3, N'Администратор', NULL)
 GO
 SET IDENTITY_INSERT [dbo].[UserTypes] OFF
 GO
@@ -283,6 +275,27 @@ ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[CurrentOrders] CHECK CONSTRAINT [FK_CurrentOrders_Services]
+GO
+ALTER TABLE [dbo].[OrderHistory]  WITH CHECK ADD  CONSTRAINT [FK_OrderHistory_Clients] FOREIGN KEY([ClientID])
+REFERENCES [dbo].[Clients] ([ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[OrderHistory] CHECK CONSTRAINT [FK_OrderHistory_Clients]
+GO
+ALTER TABLE [dbo].[OrderHistory]  WITH CHECK ADD  CONSTRAINT [FK_OrderHistory_Masters] FOREIGN KEY([MasterID])
+REFERENCES [dbo].[Masters] ([ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[OrderHistory] CHECK CONSTRAINT [FK_OrderHistory_Masters]
+GO
+ALTER TABLE [dbo].[OrderHistory]  WITH CHECK ADD  CONSTRAINT [FK_OrderHistory_Services] FOREIGN KEY([ServiceID])
+REFERENCES [dbo].[Services] ([ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[OrderHistory] CHECK CONSTRAINT [FK_OrderHistory_Services]
 GO
 ALTER TABLE [dbo].[Schedule]  WITH CHECK ADD  CONSTRAINT [FK_Schedule_Masters] FOREIGN KEY([MasterID])
 REFERENCES [dbo].[Masters] ([ID])
