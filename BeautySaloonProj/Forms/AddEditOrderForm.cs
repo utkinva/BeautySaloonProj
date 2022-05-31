@@ -36,12 +36,12 @@ namespace BeautySaloonProj.Forms
             if (order != null)
             {
                 currentOrdersBindingSource.Add(order);
-                this.Text = "Редактировать заказ";
+                this.Text = "Редактировать запись";
             }
             else
             {
                 currentOrdersBindingSource.AddNew();
-                this.Text = "Новый заказ";
+                this.Text = "Новая запись";
             }
         }
 

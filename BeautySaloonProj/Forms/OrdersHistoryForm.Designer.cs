@@ -211,7 +211,7 @@
             this.MaximizeBox = false;
             this.Name = "OrdersHistoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Архив заказов";
+            this.Text = "Архив записей";
             this.Load += new System.EventHandler(this.OrdersHistoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.scheduleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();

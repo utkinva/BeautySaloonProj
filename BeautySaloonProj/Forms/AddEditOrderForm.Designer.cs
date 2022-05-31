@@ -284,7 +284,7 @@
             this.MaximizeBox = false;
             this.Name = "AddEditOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Новый заказ";
+            this.Text = "Новая запись";
             this.Load += new System.EventHandler(this.AddEditOrderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.currentOrdersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();

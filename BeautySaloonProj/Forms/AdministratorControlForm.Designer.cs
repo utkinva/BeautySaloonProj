@@ -64,7 +64,7 @@
             this.checkArchiveBtn.Name = "checkArchiveBtn";
             this.checkArchiveBtn.Size = new System.Drawing.Size(312, 56);
             this.checkArchiveBtn.TabIndex = 8;
-            this.checkArchiveBtn.Text = "Архив заказов";
+            this.checkArchiveBtn.Text = "Архив записей";
             this.checkArchiveBtn.UseVisualStyleBackColor = false;
             this.checkArchiveBtn.Click += new System.EventHandler(this.checkArchiveBtn_Click);
             // 

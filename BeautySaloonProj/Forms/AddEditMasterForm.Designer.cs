@@ -84,9 +84,9 @@
             specializationLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             specializationLabel.Location = new System.Drawing.Point(12, 117);
             specializationLabel.Name = "specializationLabel";
-            specializationLabel.Size = new System.Drawing.Size(138, 21);
+            specializationLabel.Size = new System.Drawing.Size(135, 21);
             specializationLabel.TabIndex = 7;
-            specializationLabel.Text = "Специализация";
+            specializationLabel.Text = "Специальность";
             // 
             // iDTextBox
             // 

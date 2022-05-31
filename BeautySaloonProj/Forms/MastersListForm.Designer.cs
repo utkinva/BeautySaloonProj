@@ -37,11 +37,11 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.scheduleDataGridView = new System.Windows.Forms.DataGridView();
+            this.mastersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specializationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mastersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scheduleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mastersBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +131,10 @@
             this.scheduleDataGridView.TabIndex = 8;
             this.scheduleDataGridView.TabStop = false;
             // 
+            // mastersBindingSource
+            // 
+            this.mastersBindingSource.DataSource = typeof(BeautySaloonProj.ModelEF.Masters);
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -160,15 +164,11 @@
             // specializationDataGridViewTextBoxColumn
             // 
             this.specializationDataGridViewTextBoxColumn.DataPropertyName = "Specialization";
-            this.specializationDataGridViewTextBoxColumn.HeaderText = "Специализация";
+            this.specializationDataGridViewTextBoxColumn.HeaderText = "Специальность";
             this.specializationDataGridViewTextBoxColumn.MinimumWidth = 150;
             this.specializationDataGridViewTextBoxColumn.Name = "specializationDataGridViewTextBoxColumn";
             this.specializationDataGridViewTextBoxColumn.ReadOnly = true;
             this.specializationDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // mastersBindingSource
-            // 
-            this.mastersBindingSource.DataSource = typeof(BeautySaloonProj.ModelEF.Masters);
             // 
             // MastersListForm
             // 
@@ -201,10 +201,10 @@
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.DataGridView scheduleDataGridView;
+        private System.Windows.Forms.BindingSource mastersBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specializationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource mastersBindingSource;
     }
 }
