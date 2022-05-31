@@ -48,6 +48,20 @@ namespace BeautySaloonProj.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (master.ID == 0)
+            {
+                foreach (var item in Program.db.Masters.ToList())
+                {
+                    if (item.Name == nameTextBox.Text &&
+                        item.Phone == phoneMaskedTextBox.Text)
+                    {
+                        MessageBox.Show($"Такой мастер уже зарегистрирован в системе", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+
+
             StringBuilder errorsLog = new StringBuilder();
 
             if (String.IsNullOrWhiteSpace(nameTextBox.Text))

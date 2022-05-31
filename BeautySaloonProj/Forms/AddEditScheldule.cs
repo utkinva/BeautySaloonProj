@@ -49,6 +49,20 @@ namespace BeautySaloonProj.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (currentScheldule.ID == 0)
+            {
+                Program.db.Schedule.Add(currentScheldule);
+                foreach (var item in Program.db.Schedule.ToList())
+                {
+                    if (item.MasterID == int.Parse(masterIDComboBox.SelectedValue.ToString()))
+                    {
+                        MessageBox.Show($"Для выбранного мастера уже существует график работы", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+
+
             StringBuilder errorsLog = new StringBuilder();
             if (masterIDComboBox.SelectedItem == null)
                 errorsLog.AppendLine("Выберите мастера");

@@ -52,6 +52,21 @@ namespace BeautySaloonProj.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (order.ID == 0)
+            {
+                foreach (var item in Program.db.CurrentOrders.ToList())
+                {
+                    if (item.ClientID == int.Parse(clientIDComboBox.SelectedValue.ToString()) &&
+                        item.ServiceID == int.Parse(serviceIDComboBox.SelectedValue.ToString()) &&
+                        DateTime.Parse(item.Date.ToString()) == DateTime.Parse(dateMaskedTextBox.Text) &&
+                        TimeSpan.Parse(item.Time.ToString()) == TimeSpan.Parse(timeMaskedTextBox.Text))
+                    {
+                        MessageBox.Show($"Клиент уже записан на услугу {serviceIDComboBox.Text} {dateMaskedTextBox.Text} в {timeMaskedTextBox.Text}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+            Program.db.CurrentOrders.Add(order);
             StringBuilder errorsLog = new StringBuilder();
             if (masterIDComboBox.SelectedItem == null)
                 errorsLog.AppendLine("Выберите мастера");

@@ -47,6 +47,22 @@ namespace BeautySaloonProj.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+
+            if (client.ID == 0)
+            {
+                Program.db.Clients.Add(client);
+                foreach (var item in Program.db.Clients.ToList())
+                {
+                    if (item.ID == int.Parse(iDTextBox.Text) &&
+                        item.Name == nameTextBox.Text &&
+                        item.Phone == phoneMaskedTextBox.Text)
+                    {
+                        MessageBox.Show($"Такой клиент уже зарегистрирован в системе", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+
             StringBuilder errorsLog = new StringBuilder();
 
             if (String.IsNullOrWhiteSpace(nameTextBox.Text))

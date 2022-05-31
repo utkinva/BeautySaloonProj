@@ -48,6 +48,19 @@ namespace BeautySaloonProj.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (service.ID == 0)
+            {
+                Program.db.Services.Add(service);
+                foreach (var item in Program.db.Services.ToList())
+                {
+                    if (item.Title == titleTextBox.Text)
+                    {
+                        MessageBox.Show($"Такая услуга уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+
             StringBuilder errorsLog = new StringBuilder();
 
             if (String.IsNullOrWhiteSpace(titleTextBox.Text))
