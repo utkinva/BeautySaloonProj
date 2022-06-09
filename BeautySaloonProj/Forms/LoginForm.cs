@@ -17,6 +17,7 @@ namespace BeautySaloonProj.Forms
         public LoginForm()
         {
             InitializeComponent();
+
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -61,6 +62,16 @@ namespace BeautySaloonProj.Forms
                 MessageBox.Show("Пользователя с таким логином не существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -20,10 +20,12 @@ namespace BeautySaloonProj.Forms
             if (current != null)
             {
                 client = current;
+                this.Text = "Редактировать данные клиента";
             }
             else
             {
                 client = new Clients();
+                this.Text = "Новый клиент";
             }
         }
         private void AddEditClientForm_Load(object sender, EventArgs e)
@@ -31,12 +33,11 @@ namespace BeautySaloonProj.Forms
             if (client != null)
             {
                 clientsBindingSource.Add(client);
-                this.Text = "Редактировать данные клиента";
+
             }
             else
             {
                 clientsBindingSource.AddNew();
-                this.Text = "Новый клиент";
             }
         }
 

@@ -14,17 +14,23 @@ namespace BeautySaloonProj.Forms
     public partial class AddEditMasterForm : Form
     {
         Masters master;
+        Schedule schedule;
         public AddEditMasterForm(Masters current)
         {
             InitializeComponent();
             if (current != null)
             {
                 master = current;
+                this.Text = "Редактировать данные мастера";
+                SchedulePanel.Visible = false;
             }
             else
             {
                 master = new Masters();
+                this.Text = "Новый мастер";
+                SchedulePanel.Visible = true;
             }
+
         }
 
         private void AddEditMasterForm_Load(object sender, EventArgs e)
@@ -32,12 +38,13 @@ namespace BeautySaloonProj.Forms
             if (master != null)
             {
                 mastersBindingSource.Add(master);
-                this.Text = "Редактировать данные мастера";
+
             }
             else
             {
                 mastersBindingSource.AddNew();
-                this.Text = "Новый мастер";
+                scheduleBindingSource.AddNew();
+
             }
         }
 
@@ -48,6 +55,31 @@ namespace BeautySaloonProj.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+
+            StringBuilder errorsLog = new StringBuilder();
+
+            if (String.IsNullOrWhiteSpace(nameTextBox.Text))
+                errorsLog.AppendLine("Заполните поле \"Полное имя\"");
+            if (String.IsNullOrWhiteSpace(specializationTextBox.Text))
+                errorsLog.AppendLine("Заполните поле \"Специализация\"");
+            if (phoneMaskedTextBox.Text.Length != 18)
+                errorsLog.AppendLine("Заполните поле \"Номер телефона\"");
+            if (SchedulePanel.Visible == true)
+            {
+                if (String.IsNullOrWhiteSpace(weekdaysTextBox.Text))
+                    errorsLog.AppendLine("Заполните рабочие дни");
+                if (startTimeMaskedTextBox.Text.Length != 5)
+                    errorsLog.AppendLine("Заполните время начала работы");
+                if (endTimeMaskedTextBox.Text.Length != 5)
+                    errorsLog.AppendLine("Заполните время окончания работы");
+            }
+
+
+            if (errorsLog.Length != 0)
+            {
+                MessageBox.Show($"Не удалось сохранить изменения: \n{errorsLog}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (master.ID == 0)
             {
                 foreach (var item in Program.db.Masters.ToList())
@@ -61,28 +93,30 @@ namespace BeautySaloonProj.Forms
                 }
             }
 
+            List<Masters> mastersList = Program.db.Masters.ToList();
+            int[] mastersArray = new int[mastersList.Count];
 
-            StringBuilder errorsLog = new StringBuilder();
-
-            if (String.IsNullOrWhiteSpace(nameTextBox.Text))
-                errorsLog.AppendLine("Заполните поле \"Полное имя\"");
-            if (String.IsNullOrWhiteSpace(specializationTextBox.Text))
-                errorsLog.AppendLine("Заполните поле \"Специализация\"");
-            if (phoneMaskedTextBox.Text.Length != 18)
-                errorsLog.AppendLine("Заполните поле \"Номер телефона\"");
-
-
-
-
-            if (errorsLog.Length != 0)
+            for (int i = 0; i < mastersList.Count - 1; i++)
             {
-                MessageBox.Show($"Не удалось сохранить изменения: \n{errorsLog}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                mastersArray[i] = mastersList[i].ID;
             }
 
             if (master.ID == 0)
             {
                 Program.db.Masters.Add(master);
+                if (SchedulePanel.Visible == true)
+                {
+                    schedule = new Schedule()
+                    {
+                        MasterID = int.Parse(mastersArray[mastersArray.Length - 1].ToString()) + 1,
+                        Weekdays = weekdaysTextBox.Text,
+                        Weekend = weekendTextBox.Text,
+                        StartTime = TimeSpan.Parse(startTimeMaskedTextBox.Text),
+                        EndTime = TimeSpan.Parse(endTimeMaskedTextBox.Text),
+                        Masters = master
+                    };
+                    Program.db.Schedule.Add(schedule);
+                }
             }
 
             try

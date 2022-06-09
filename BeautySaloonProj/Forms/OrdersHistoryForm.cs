@@ -16,6 +16,9 @@ namespace BeautySaloonProj.Forms
         public OrdersHistoryForm()
         {
             InitializeComponent();
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
+            CurrentUserLbl.Text = $"Вы авторизовались как {Program.currentUser.UserTypes.Title}";
+            timer1.Start();
         }
 
         private void OrdersHistoryForm_Load(object sender, EventArgs e)
@@ -59,6 +62,11 @@ namespace BeautySaloonProj.Forms
         private void scheduleDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
         }
     }
 }

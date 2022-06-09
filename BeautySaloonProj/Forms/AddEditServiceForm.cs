@@ -18,11 +18,13 @@ namespace BeautySaloonProj.Forms
         {
             InitializeComponent();
             if (current != null)
-{
+            {
                 service = current;
+                this.Text = "Редактировать данные услуги";
             }
             else
-{
+            {
+                this.Text = "Новая услуга";
                 service = new Services();
             }
         }
@@ -32,12 +34,10 @@ namespace BeautySaloonProj.Forms
             if (service != null)
             {
                 servicesBindingSource.Add(service);
-                this.Text = "Редактировать данные услуги";
             }
             else
             {
                 servicesBindingSource.AddNew();
-                this.Text = "Новая услуга";
             }
         }
 

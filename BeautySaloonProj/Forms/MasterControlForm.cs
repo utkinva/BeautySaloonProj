@@ -15,6 +15,9 @@ namespace BeautySaloonProj.Forms
         public MasterControlForm()
         {
             InitializeComponent();
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
+            CurrentUserLbl.Text = $"Вы авторизовались как {Program.currentUser.UserTypes.Title}";
+            timer1.Start();
         }
 
         private void checkSchelduleBtn_Click(object sender, EventArgs e)
@@ -50,6 +53,11 @@ namespace BeautySaloonProj.Forms
                 return;
             }
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
         }
     }
 }

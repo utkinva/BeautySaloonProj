@@ -16,6 +16,9 @@ namespace BeautySaloonProj.Forms
         public AccountsListForm()
         {
             InitializeComponent();
+            CurrentUserLbl.Text = $"Вы авторизовались как {Program.currentUser.UserTypes.Title}";
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
+            timer1.Start();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -63,6 +66,11 @@ namespace BeautySaloonProj.Forms
         private void scheduleDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
         }
     }
 }

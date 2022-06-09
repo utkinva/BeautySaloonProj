@@ -56,50 +56,55 @@
             // loginLabel
             // 
             loginLabel.AutoSize = true;
-            loginLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            loginLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             loginLabel.Location = new System.Drawing.Point(12, 12);
             loginLabel.Name = "loginLabel";
-            loginLabel.Size = new System.Drawing.Size(61, 21);
+            loginLabel.Size = new System.Drawing.Size(59, 20);
             loginLabel.TabIndex = 1;
             loginLabel.Text = "Логин:";
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             nameLabel.Location = new System.Drawing.Point(12, 108);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(109, 21);
+            nameLabel.Size = new System.Drawing.Size(104, 20);
             nameLabel.TabIndex = 3;
             nameLabel.Text = "Полное имя:";
             // 
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            passwordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             passwordLabel.Location = new System.Drawing.Point(12, 44);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(74, 21);
+            passwordLabel.Size = new System.Drawing.Size(71, 20);
             passwordLabel.TabIndex = 5;
             passwordLabel.Text = "Пароль:";
             // 
             // userTypeIDLabel
             // 
             userTypeIDLabel.AutoSize = true;
-            userTypeIDLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            userTypeIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            userTypeIDLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             userTypeIDLabel.Location = new System.Drawing.Point(12, 142);
             userTypeIDLabel.Name = "userTypeIDLabel";
-            userTypeIDLabel.Size = new System.Drawing.Size(150, 21);
+            userTypeIDLabel.Size = new System.Drawing.Size(153, 20);
             userTypeIDLabel.TabIndex = 7;
             userTypeIDLabel.Text = "Тип пользователя:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             label1.Location = new System.Drawing.Point(12, 76);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(176, 21);
+            label1.Size = new System.Drawing.Size(178, 20);
             label1.TabIndex = 5;
             label1.Text = "Подтвердите пароль:";
             // 
@@ -109,30 +114,36 @@
             // 
             // loginTextBox
             // 
+            this.loginTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.loginTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Login", true));
-            this.loginTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loginTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loginTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             this.loginTextBox.Location = new System.Drawing.Point(196, 6);
             this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(326, 27);
+            this.loginTextBox.Size = new System.Drawing.Size(326, 26);
             this.loginTextBox.TabIndex = 0;
             // 
             // nameTextBox
             // 
+            this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Name", true));
-            this.nameTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             this.nameTextBox.Location = new System.Drawing.Point(196, 102);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(326, 27);
+            this.nameTextBox.Size = new System.Drawing.Size(326, 26);
             this.nameTextBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
+            this.passwordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Password", true));
-            this.passwordTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             this.passwordTextBox.Location = new System.Drawing.Point(196, 38);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(326, 27);
+            this.passwordTextBox.Size = new System.Drawing.Size(326, 26);
             this.passwordTextBox.TabIndex = 1;
             // 
             // userTypeIDComboBox
@@ -141,11 +152,11 @@
             this.userTypeIDComboBox.DataSource = this.userTypesBindingSource;
             this.userTypeIDComboBox.DisplayMember = "Title";
             this.userTypeIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.userTypeIDComboBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userTypeIDComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.userTypeIDComboBox.FormattingEnabled = true;
             this.userTypeIDComboBox.Location = new System.Drawing.Point(196, 134);
             this.userTypeIDComboBox.Name = "userTypeIDComboBox";
-            this.userTypeIDComboBox.Size = new System.Drawing.Size(326, 29);
+            this.userTypeIDComboBox.Size = new System.Drawing.Size(326, 28);
             this.userTypeIDComboBox.TabIndex = 8;
             this.userTypeIDComboBox.TabStop = false;
             this.userTypeIDComboBox.ValueMember = "ID";
@@ -156,33 +167,35 @@
             // 
             // passwordConfirmTextBox
             // 
-            this.passwordConfirmTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordConfirmTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.passwordConfirmTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordConfirmTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             this.passwordConfirmTextBox.Location = new System.Drawing.Point(196, 70);
             this.passwordConfirmTextBox.Name = "passwordConfirmTextBox";
             this.passwordConfirmTextBox.PasswordChar = '*';
-            this.passwordConfirmTextBox.Size = new System.Drawing.Size(326, 27);
+            this.passwordConfirmTextBox.Size = new System.Drawing.Size(326, 26);
             this.passwordConfirmTextBox.TabIndex = 2;
             // 
             // confirmBtn
             // 
-            this.confirmBtn.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.confirmBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             this.confirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confirmBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.confirmBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.confirmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.confirmBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.confirmBtn.Location = new System.Drawing.Point(12, 178);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(191, 43);
             this.confirmBtn.TabIndex = 4;
-            this.confirmBtn.Text = "Подтвердить";
+            this.confirmBtn.Text = "Сохранить";
             this.confirmBtn.UseVisualStyleBackColor = false;
             this.confirmBtn.Click += new System.EventHandler(this.ConfirmBtn_Click);
             // 
             // cancelBtn
             // 
-            this.cancelBtn.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.cancelBtn.Location = new System.Drawing.Point(331, 178);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(191, 43);
@@ -191,11 +204,11 @@
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // RegistrationForm
+            // AddNewAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(165)))), ((int)(((byte)(173)))));
             this.ClientSize = new System.Drawing.Size(534, 233);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.confirmBtn);
@@ -212,7 +225,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "RegistrationForm";
+            this.Name = "AddNewAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Новая учетная запись";
             this.Load += new System.EventHandler(this.RegistrationForm_Load);

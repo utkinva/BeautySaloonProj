@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ namespace BeautySaloonProj.Forms
         public AuthorizationForm()
         {
             InitializeComponent();
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
+            timer1.Start();
+
         }
         private void loginBtn_Click(object sender, EventArgs e)
         {
@@ -39,6 +43,22 @@ namespace BeautySaloonProj.Forms
             }
             else
                 MessageBox.Show("Авторизация отменена");
+        }
+
+        private void AuthorizationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Process current = Process.GetCurrentProcess();
+            current.Kill();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
+        }
+
+        private void AuthorizationForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

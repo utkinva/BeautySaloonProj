@@ -16,6 +16,9 @@ namespace BeautySaloonProj.Forms
         public ClientsListForm()
         {
             InitializeComponent();
+            CurrentUserLbl.Text = $"Вы авторизовались как {Program.currentUser.UserTypes.Title}";
+            timer1.Start();
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
         }
 
         private void ClientsListForm_Load(object sender, EventArgs e)
@@ -78,6 +81,11 @@ namespace BeautySaloonProj.Forms
             {
                 clientsBindingSource.DataSource = Program.db.Clients.ToList();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimeNowLbl.Text = $"{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
         }
     }
 }

@@ -17,18 +17,25 @@ namespace BeautySaloonProj.Forms
         public AddEditOrderForm(CurrentOrders current)
         {
             InitializeComponent();
+
             if (current != null)
             {
                 order = current;
+                currentOrdersBindingSource.Add(order);
+                this.Text = "Редактировать запись";
             }
             else
             {
                 order = new CurrentOrders();
+                currentOrdersBindingSource.AddNew();
+                this.Text = "Новая запись";
             }
         }
 
         private void AddEditOrderForm_Load(object sender, EventArgs e)
         {
+            clientIDComboBox.SelectionLength = 0;
+
             clientsBindingSource.DataSource = Program.db.Clients.ToList();
             servicesBindingSource.DataSource = Program.db.Services.ToList();
             mastersBindingSource.DataSource = Program.db.Masters.ToList();
@@ -36,12 +43,10 @@ namespace BeautySaloonProj.Forms
             if (order != null)
             {
                 currentOrdersBindingSource.Add(order);
-                this.Text = "Редактировать запись";
             }
             else
             {
                 currentOrdersBindingSource.AddNew();
-                this.Text = "Новая запись";
             }
         }
 
@@ -52,21 +57,7 @@ namespace BeautySaloonProj.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (order.ID == 0)
-            {
-                foreach (var item in Program.db.CurrentOrders.ToList())
-                {
-                    if (item.ClientID == int.Parse(clientIDComboBox.SelectedValue.ToString()) &&
-                        item.ServiceID == int.Parse(serviceIDComboBox.SelectedValue.ToString()) &&
-                        DateTime.Parse(item.Date.ToString()) == DateTime.Parse(dateMaskedTextBox.Text) &&
-                        TimeSpan.Parse(item.Time.ToString()) == TimeSpan.Parse(timeMaskedTextBox.Text))
-                    {
-                        MessageBox.Show($"Клиент уже записан на услугу {serviceIDComboBox.Text} {dateMaskedTextBox.Text} в {timeMaskedTextBox.Text}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
-            }
-            Program.db.CurrentOrders.Add(order);
+
             StringBuilder errorsLog = new StringBuilder();
             if (masterIDComboBox.SelectedItem == null)
                 errorsLog.AppendLine("Выберите мастера");
@@ -80,12 +71,38 @@ namespace BeautySaloonProj.Forms
                 errorsLog.AppendLine("Выберите время записи");
 
 
-
             if (errorsLog.Length != 0)
             {
                 MessageBox.Show($"Не удалось сохранить изменения: \n{errorsLog}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            try
+            {
+                if (order.ID == 0)
+                {
+                    foreach (var item in Program.db.CurrentOrders.ToList())
+                    {
+                        if (item.ClientID == int.Parse(clientIDComboBox.SelectedValue.ToString()) &&
+                            item.ServiceID == int.Parse(serviceIDComboBox.SelectedValue.ToString()) &&
+                            DateTime.Parse(item.Date.ToString()) == DateTime.Parse(dateMaskedTextBox.Text) &&
+                            TimeSpan.Parse(item.Time.ToString()) == TimeSpan.Parse(timeMaskedTextBox.Text))
+                        {
+                            MessageBox.Show($"Клиент уже записан на услугу {serviceIDComboBox.Text} {dateMaskedTextBox.Text} в {timeMaskedTextBox.Text}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+
+
+
 
             if (order.ID == 0)
             {
