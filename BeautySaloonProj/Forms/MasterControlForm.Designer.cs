@@ -35,13 +35,13 @@
             this.checkArchiveBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.TimeNowLbl = new System.Windows.Forms.Label();
             this.FormNameLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FooterPanel = new System.Windows.Forms.Panel();
             this.CurrentUserLbl = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.FooterPanel.SuspendLayout();
@@ -53,9 +53,9 @@
             this.checkSchelduleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkSchelduleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkSchelduleBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkSchelduleBtn.Location = new System.Drawing.Point(351, 153);
+            this.checkSchelduleBtn.Location = new System.Drawing.Point(644, 153);
             this.checkSchelduleBtn.Name = "checkSchelduleBtn";
-            this.checkSchelduleBtn.Size = new System.Drawing.Size(289, 56);
+            this.checkSchelduleBtn.Size = new System.Drawing.Size(310, 56);
             this.checkSchelduleBtn.TabIndex = 6;
             this.checkSchelduleBtn.Text = "График работы";
             this.checkSchelduleBtn.UseVisualStyleBackColor = false;
@@ -67,11 +67,11 @@
             this.checkOrdersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkOrdersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkOrdersBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkOrdersBtn.Location = new System.Drawing.Point(351, 215);
+            this.checkOrdersBtn.Location = new System.Drawing.Point(12, 154);
             this.checkOrdersBtn.Name = "checkOrdersBtn";
-            this.checkOrdersBtn.Size = new System.Drawing.Size(289, 56);
+            this.checkOrdersBtn.Size = new System.Drawing.Size(310, 56);
             this.checkOrdersBtn.TabIndex = 6;
-            this.checkOrdersBtn.Text = "Записи клиентов";
+            this.checkOrdersBtn.Text = "Текущие записи";
             this.checkOrdersBtn.UseVisualStyleBackColor = false;
             this.checkOrdersBtn.Click += new System.EventHandler(this.checkOrdersBtn_Click);
             // 
@@ -81,9 +81,9 @@
             this.checkArchiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkArchiveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkArchiveBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkArchiveBtn.Location = new System.Drawing.Point(351, 277);
+            this.checkArchiveBtn.Location = new System.Drawing.Point(328, 154);
             this.checkArchiveBtn.Name = "checkArchiveBtn";
-            this.checkArchiveBtn.Size = new System.Drawing.Size(289, 56);
+            this.checkArchiveBtn.Size = new System.Drawing.Size(310, 56);
             this.checkArchiveBtn.TabIndex = 6;
             this.checkArchiveBtn.Text = "Архив заказов";
             this.checkArchiveBtn.UseVisualStyleBackColor = false;
@@ -95,7 +95,7 @@
             this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.logoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.logoutBtn.Location = new System.Drawing.Point(351, 458);
+            this.logoutBtn.Location = new System.Drawing.Point(669, 26);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(289, 56);
             this.logoutBtn.TabIndex = 6;
@@ -115,6 +115,17 @@
             this.HeaderPanel.Size = new System.Drawing.Size(1004, 147);
             this.HeaderPanel.TabIndex = 12;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
+            this.label1.Location = new System.Drawing.Point(172, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(271, 29);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Текущая дата и время";
+            // 
             // TimeNowLbl
             // 
             this.TimeNowLbl.AutoSize = true;
@@ -131,7 +142,7 @@
             this.FormNameLbl.AutoSize = true;
             this.FormNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormNameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            this.FormNameLbl.Location = new System.Drawing.Point(653, 11);
+            this.FormNameLbl.Location = new System.Drawing.Point(614, 14);
             this.FormNameLbl.Name = "FormNameLbl";
             this.FormNameLbl.Size = new System.Drawing.Size(348, 55);
             this.FormNameLbl.TabIndex = 2;
@@ -151,6 +162,7 @@
             // 
             this.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.FooterPanel.Controls.Add(this.CurrentUserLbl);
+            this.FooterPanel.Controls.Add(this.logoutBtn);
             this.FooterPanel.Location = new System.Drawing.Point(0, 520);
             this.FooterPanel.Name = "FooterPanel";
             this.FooterPanel.Size = new System.Drawing.Size(1004, 97);
@@ -171,26 +183,14 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(172, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Текущая дата и время";
-            // 
             // MasterControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(165)))), ((int)(((byte)(173)))));
-            this.ClientSize = new System.Drawing.Size(998, 614);
+            this.ClientSize = new System.Drawing.Size(970, 614);
             this.Controls.Add(this.FooterPanel);
             this.Controls.Add(this.HeaderPanel);
-            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.checkArchiveBtn);
             this.Controls.Add(this.checkOrdersBtn);
             this.Controls.Add(this.checkSchelduleBtn);

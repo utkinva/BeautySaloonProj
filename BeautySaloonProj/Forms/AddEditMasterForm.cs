@@ -66,8 +66,6 @@ namespace BeautySaloonProj.Forms
                 errorsLog.AppendLine("Заполните поле \"Номер телефона\"");
             if (SchedulePanel.Visible == true)
             {
-                if (String.IsNullOrWhiteSpace(weekdaysTextBox.Text))
-                    errorsLog.AppendLine("Заполните рабочие дни");
                 if (startTimeMaskedTextBox.Text.Length != 5)
                     errorsLog.AppendLine("Заполните время начала работы");
                 if (endTimeMaskedTextBox.Text.Length != 5)
@@ -109,7 +107,6 @@ namespace BeautySaloonProj.Forms
                     schedule = new Schedule()
                     {
                         MasterID = int.Parse(mastersArray[mastersArray.Length - 1].ToString()) + 1,
-                        Weekdays = weekdaysTextBox.Text,
                         Weekend = weekendTextBox.Text,
                         StartTime = TimeSpan.Parse(startTimeMaskedTextBox.Text),
                         EndTime = TimeSpan.Parse(endTimeMaskedTextBox.Text),

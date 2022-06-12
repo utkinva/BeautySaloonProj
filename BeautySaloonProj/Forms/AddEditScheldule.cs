@@ -53,8 +53,6 @@ namespace BeautySaloonProj.Forms
             StringBuilder errorsLog = new StringBuilder();
             if (masterIDComboBox.SelectedItem == null)
                 errorsLog.AppendLine("Выберите мастера");
-            if (String.IsNullOrWhiteSpace(weekdaysTextBox.Text))
-                errorsLog.AppendLine("Заполните рабочие дни");
             if (startTimeMaskedTextBox.Text.Length != 5)
                 errorsLog.AppendLine("Заполните время начала работы");
             if (endTimeMaskedTextBox.Text.Length != 5)

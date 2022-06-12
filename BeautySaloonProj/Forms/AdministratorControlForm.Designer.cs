@@ -40,13 +40,16 @@
             this.checkAccsBtn = new System.Windows.Forms.Button();
             this.checkServicesBtn = new System.Windows.Forms.Button();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.TimeNowLbl = new System.Windows.Forms.Label();
             this.FormNameLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FooterPanel = new System.Windows.Forms.Panel();
             this.CurrentUserLbl = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.FooterPanel.SuspendLayout();
@@ -58,9 +61,9 @@
             this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.logoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.logoutBtn.Location = new System.Drawing.Point(176, 510);
+            this.logoutBtn.Location = new System.Drawing.Point(723, 26);
             this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(635, 56);
+            this.logoutBtn.Size = new System.Drawing.Size(312, 56);
             this.logoutBtn.TabIndex = 7;
             this.logoutBtn.Text = "Выйти из учетной записи";
             this.logoutBtn.UseVisualStyleBackColor = false;
@@ -72,9 +75,9 @@
             this.checkArchiveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkArchiveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkArchiveBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkArchiveBtn.Location = new System.Drawing.Point(181, 287);
+            this.checkArchiveBtn.Location = new System.Drawing.Point(12, 272);
             this.checkArchiveBtn.Name = "checkArchiveBtn";
-            this.checkArchiveBtn.Size = new System.Drawing.Size(312, 56);
+            this.checkArchiveBtn.Size = new System.Drawing.Size(507, 56);
             this.checkArchiveBtn.TabIndex = 8;
             this.checkArchiveBtn.Text = "Архив записей";
             this.checkArchiveBtn.UseVisualStyleBackColor = false;
@@ -86,11 +89,11 @@
             this.checkOrdersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkOrdersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkOrdersBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkOrdersBtn.Location = new System.Drawing.Point(181, 225);
+            this.checkOrdersBtn.Location = new System.Drawing.Point(12, 210);
             this.checkOrdersBtn.Name = "checkOrdersBtn";
-            this.checkOrdersBtn.Size = new System.Drawing.Size(312, 56);
+            this.checkOrdersBtn.Size = new System.Drawing.Size(507, 56);
             this.checkOrdersBtn.TabIndex = 9;
-            this.checkOrdersBtn.Text = "Записи клиентов";
+            this.checkOrdersBtn.Text = "Текущие записи";
             this.checkOrdersBtn.UseVisualStyleBackColor = false;
             this.checkOrdersBtn.Click += new System.EventHandler(this.checkOrdersBtn_Click);
             // 
@@ -100,7 +103,7 @@
             this.checkSchelduleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkSchelduleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkSchelduleBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkSchelduleBtn.Location = new System.Drawing.Point(181, 163);
+            this.checkSchelduleBtn.Location = new System.Drawing.Point(718, 469);
             this.checkSchelduleBtn.Name = "checkSchelduleBtn";
             this.checkSchelduleBtn.Size = new System.Drawing.Size(312, 56);
             this.checkSchelduleBtn.TabIndex = 10;
@@ -114,9 +117,9 @@
             this.checkClientListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkClientListBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkClientListBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkClientListBtn.Location = new System.Drawing.Point(181, 349);
+            this.checkClientListBtn.Location = new System.Drawing.Point(525, 210);
             this.checkClientListBtn.Name = "checkClientListBtn";
-            this.checkClientListBtn.Size = new System.Drawing.Size(312, 56);
+            this.checkClientListBtn.Size = new System.Drawing.Size(505, 56);
             this.checkClientListBtn.TabIndex = 8;
             this.checkClientListBtn.Text = "Список клиентов";
             this.checkClientListBtn.UseVisualStyleBackColor = false;
@@ -128,7 +131,7 @@
             this.checkMastersListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkMastersListBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkMastersListBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkMastersListBtn.Location = new System.Drawing.Point(499, 163);
+            this.checkMastersListBtn.Location = new System.Drawing.Point(718, 407);
             this.checkMastersListBtn.Name = "checkMastersListBtn";
             this.checkMastersListBtn.Size = new System.Drawing.Size(312, 56);
             this.checkMastersListBtn.TabIndex = 8;
@@ -142,7 +145,7 @@
             this.addNewAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addNewAccountBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addNewAccountBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.addNewAccountBtn.Location = new System.Drawing.Point(499, 287);
+            this.addNewAccountBtn.Location = new System.Drawing.Point(12, 469);
             this.addNewAccountBtn.Name = "addNewAccountBtn";
             this.addNewAccountBtn.Size = new System.Drawing.Size(312, 56);
             this.addNewAccountBtn.TabIndex = 8;
@@ -156,7 +159,7 @@
             this.checkAccsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkAccsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkAccsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkAccsBtn.Location = new System.Drawing.Point(499, 225);
+            this.checkAccsBtn.Location = new System.Drawing.Point(12, 407);
             this.checkAccsBtn.Name = "checkAccsBtn";
             this.checkAccsBtn.Size = new System.Drawing.Size(312, 56);
             this.checkAccsBtn.TabIndex = 8;
@@ -170,9 +173,9 @@
             this.checkServicesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkServicesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkServicesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.checkServicesBtn.Location = new System.Drawing.Point(499, 349);
+            this.checkServicesBtn.Location = new System.Drawing.Point(525, 272);
             this.checkServicesBtn.Name = "checkServicesBtn";
-            this.checkServicesBtn.Size = new System.Drawing.Size(312, 56);
+            this.checkServicesBtn.Size = new System.Drawing.Size(505, 56);
             this.checkServicesBtn.TabIndex = 8;
             this.checkServicesBtn.Text = "Список услуг";
             this.checkServicesBtn.UseVisualStyleBackColor = false;
@@ -187,8 +190,19 @@
             this.HeaderPanel.Controls.Add(this.pictureBox1);
             this.HeaderPanel.Location = new System.Drawing.Point(-5, -2);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1004, 147);
+            this.HeaderPanel.Size = new System.Drawing.Size(1060, 147);
             this.HeaderPanel.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
+            this.label1.Location = new System.Drawing.Point(172, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(271, 29);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Текущая дата и время";
             // 
             // TimeNowLbl
             // 
@@ -206,7 +220,7 @@
             this.FormNameLbl.AutoSize = true;
             this.FormNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormNameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            this.FormNameLbl.Location = new System.Drawing.Point(653, 11);
+            this.FormNameLbl.Location = new System.Drawing.Point(687, 11);
             this.FormNameLbl.Name = "FormNameLbl";
             this.FormNameLbl.Size = new System.Drawing.Size(348, 55);
             this.FormNameLbl.TabIndex = 2;
@@ -226,9 +240,10 @@
             // 
             this.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.FooterPanel.Controls.Add(this.CurrentUserLbl);
-            this.FooterPanel.Location = new System.Drawing.Point(-5, 572);
+            this.FooterPanel.Controls.Add(this.logoutBtn);
+            this.FooterPanel.Location = new System.Drawing.Point(-5, 620);
             this.FooterPanel.Name = "FooterPanel";
-            this.FooterPanel.Size = new System.Drawing.Size(1004, 97);
+            this.FooterPanel.Size = new System.Drawing.Size(1060, 97);
             this.FooterPanel.TabIndex = 12;
             // 
             // CurrentUserLbl
@@ -246,29 +261,53 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(172, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Текущая дата и время";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
+            this.label2.Location = new System.Drawing.Point(10, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(516, 51);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Клиенты, записи, услуги";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
+            this.label3.Location = new System.Drawing.Point(10, 353);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(347, 51);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Учетные записи";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
+            this.label4.Location = new System.Drawing.Point(709, 353);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(196, 51);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Мастера";
             // 
             // AdministratorControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(165)))), ((int)(((byte)(173)))));
-            this.ClientSize = new System.Drawing.Size(997, 661);
+            this.ClientSize = new System.Drawing.Size(1042, 714);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.FooterPanel);
             this.Controls.Add(this.HeaderPanel);
-            this.Controls.Add(this.logoutBtn);
-            this.Controls.Add(this.checkAccsBtn);
             this.Controls.Add(this.addNewAccountBtn);
             this.Controls.Add(this.checkMastersListBtn);
+            this.Controls.Add(this.checkAccsBtn);
             this.Controls.Add(this.checkServicesBtn);
             this.Controls.Add(this.checkClientListBtn);
             this.Controls.Add(this.checkArchiveBtn);
@@ -287,6 +326,7 @@
             this.FooterPanel.ResumeLayout(false);
             this.FooterPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -309,5 +349,8 @@
         private System.Windows.Forms.Label CurrentUserLbl;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
