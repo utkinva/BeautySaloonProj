@@ -54,8 +54,7 @@ namespace BeautySaloonProj.Forms
                 Program.db.Clients.Add(client);
                 foreach (var item in Program.db.Clients.ToList())
                 {
-                    if (item.ID == int.Parse(iDTextBox.Text) &&
-                        item.Name == nameTextBox.Text &&
+                    if (item.Name == nameTextBox.Text &&
                         item.Phone == phoneMaskedTextBox.Text)
                     {
                         MessageBox.Show($"Такой клиент уже зарегистрирован в системе", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);

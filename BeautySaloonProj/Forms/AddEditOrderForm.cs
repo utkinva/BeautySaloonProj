@@ -21,13 +21,11 @@ namespace BeautySaloonProj.Forms
             if (current != null)
             {
                 order = current;
-                currentOrdersBindingSource.Add(order);
                 this.Text = "Редактировать запись";
             }
             else
             {
                 order = new CurrentOrders();
-                currentOrdersBindingSource.AddNew();
                 this.Text = "Новая запись";
             }
         }
@@ -57,6 +55,14 @@ namespace BeautySaloonProj.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            DateTime dateTimeNow = DateTime.Now;
+            DateTime dateTimeUser = DateTime.Parse(dateMaskedTextBox.Text);
+            if (dateTimeUser > dateTimeNow)
+            {
+                MessageBox.Show("Значение поля \"Дата\" не может превышать значение текущей даты");
+                return;
+            }
+
 
             StringBuilder errorsLog = new StringBuilder();
             if (masterIDComboBox.SelectedItem == null)

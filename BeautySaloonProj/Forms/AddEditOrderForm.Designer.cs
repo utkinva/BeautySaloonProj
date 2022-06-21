@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label clientIDLabel;
             System.Windows.Forms.Label dateLabel;
-            System.Windows.Forms.Label iDLabel;
             System.Windows.Forms.Label masterIDLabel;
             System.Windows.Forms.Label serviceIDLabel;
             System.Windows.Forms.Label timeLabel;
@@ -39,7 +38,6 @@
             this.clientIDComboBox = new System.Windows.Forms.ComboBox();
             this.currentOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDTextBox = new System.Windows.Forms.TextBox();
             this.masterIDComboBox = new System.Windows.Forms.ComboBox();
             this.mastersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviceIDComboBox = new System.Windows.Forms.ComboBox();
@@ -51,7 +49,6 @@
             this.dateMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             clientIDLabel = new System.Windows.Forms.Label();
             dateLabel = new System.Windows.Forms.Label();
-            iDLabel = new System.Windows.Forms.Label();
             masterIDLabel = new System.Windows.Forms.Label();
             serviceIDLabel = new System.Windows.Forms.Label();
             timeLabel = new System.Windows.Forms.Label();
@@ -66,7 +63,7 @@
             clientIDLabel.AutoSize = true;
             clientIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             clientIDLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            clientIDLabel.Location = new System.Drawing.Point(6, 119);
+            clientIDLabel.Location = new System.Drawing.Point(14, 87);
             clientIDLabel.Name = "clientIDLabel";
             clientIDLabel.Size = new System.Drawing.Size(69, 20);
             clientIDLabel.TabIndex = 1;
@@ -77,29 +74,18 @@
             dateLabel.AutoSize = true;
             dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            dateLabel.Location = new System.Drawing.Point(6, 51);
+            dateLabel.Location = new System.Drawing.Point(14, 19);
             dateLabel.Name = "dateLabel";
             dateLabel.Size = new System.Drawing.Size(52, 20);
             dateLabel.TabIndex = 3;
             dateLabel.Text = "Дата:";
-            // 
-            // iDLabel
-            // 
-            iDLabel.AutoSize = true;
-            iDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            iDLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            iDLabel.Location = new System.Drawing.Point(6, 18);
-            iDLabel.Name = "iDLabel";
-            iDLabel.Size = new System.Drawing.Size(30, 20);
-            iDLabel.TabIndex = 5;
-            iDLabel.Text = "ID:";
             // 
             // masterIDLabel
             // 
             masterIDLabel.AutoSize = true;
             masterIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             masterIDLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            masterIDLabel.Location = new System.Drawing.Point(6, 188);
+            masterIDLabel.Location = new System.Drawing.Point(14, 156);
             masterIDLabel.Name = "masterIDLabel";
             masterIDLabel.Size = new System.Drawing.Size(70, 20);
             masterIDLabel.TabIndex = 7;
@@ -110,7 +96,7 @@
             serviceIDLabel.AutoSize = true;
             serviceIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             serviceIDLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            serviceIDLabel.Location = new System.Drawing.Point(6, 223);
+            serviceIDLabel.Location = new System.Drawing.Point(14, 191);
             serviceIDLabel.Name = "serviceIDLabel";
             serviceIDLabel.Size = new System.Drawing.Size(64, 20);
             serviceIDLabel.TabIndex = 9;
@@ -121,7 +107,7 @@
             timeLabel.AutoSize = true;
             timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             timeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            timeLabel.Location = new System.Drawing.Point(6, 84);
+            timeLabel.Location = new System.Drawing.Point(14, 52);
             timeLabel.Name = "timeLabel";
             timeLabel.Size = new System.Drawing.Size(62, 20);
             timeLabel.TabIndex = 11;
@@ -138,7 +124,7 @@
             this.clientIDComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clientIDComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             this.clientIDComboBox.FormattingEnabled = true;
-            this.clientIDComboBox.Location = new System.Drawing.Point(120, 108);
+            this.clientIDComboBox.Location = new System.Drawing.Point(128, 76);
             this.clientIDComboBox.Name = "clientIDComboBox";
             this.clientIDComboBox.Size = new System.Drawing.Size(363, 28);
             this.clientIDComboBox.TabIndex = 2;
@@ -153,19 +139,6 @@
             // 
             this.clientsBindingSource.DataSource = typeof(BeautySaloonProj.ModelEF.Clients);
             // 
-            // iDTextBox
-            // 
-            this.iDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.currentOrdersBindingSource, "ID", true));
-            this.iDTextBox.Enabled = false;
-            this.iDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iDTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            this.iDTextBox.Location = new System.Drawing.Point(120, 12);
-            this.iDTextBox.Name = "iDTextBox";
-            this.iDTextBox.Size = new System.Drawing.Size(363, 26);
-            this.iDTextBox.TabIndex = 6;
-            this.iDTextBox.TabStop = false;
-            // 
             // masterIDComboBox
             // 
             this.masterIDComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
@@ -177,7 +150,7 @@
             this.masterIDComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.masterIDComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             this.masterIDComboBox.FormattingEnabled = true;
-            this.masterIDComboBox.Location = new System.Drawing.Point(120, 180);
+            this.masterIDComboBox.Location = new System.Drawing.Point(128, 148);
             this.masterIDComboBox.Name = "masterIDComboBox";
             this.masterIDComboBox.Size = new System.Drawing.Size(363, 28);
             this.masterIDComboBox.TabIndex = 8;
@@ -199,7 +172,7 @@
             this.serviceIDComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.serviceIDComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
             this.serviceIDComboBox.FormattingEnabled = true;
-            this.serviceIDComboBox.Location = new System.Drawing.Point(120, 215);
+            this.serviceIDComboBox.Location = new System.Drawing.Point(128, 183);
             this.serviceIDComboBox.Name = "serviceIDComboBox";
             this.serviceIDComboBox.Size = new System.Drawing.Size(363, 28);
             this.serviceIDComboBox.TabIndex = 10;
@@ -216,7 +189,7 @@
             this.timeMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.currentOrdersBindingSource, "Time", true));
             this.timeMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeMaskedTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            this.timeMaskedTextBox.Location = new System.Drawing.Point(120, 76);
+            this.timeMaskedTextBox.Location = new System.Drawing.Point(128, 44);
             this.timeMaskedTextBox.Mask = "00:00";
             this.timeMaskedTextBox.Name = "timeMaskedTextBox";
             this.timeMaskedTextBox.Size = new System.Drawing.Size(363, 26);
@@ -229,7 +202,7 @@
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.cancelBtn.Location = new System.Drawing.Point(319, 249);
+            this.cancelBtn.Location = new System.Drawing.Point(327, 217);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(164, 43);
             this.cancelBtn.TabIndex = 4;
@@ -243,7 +216,7 @@
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.saveBtn.Location = new System.Drawing.Point(120, 249);
+            this.saveBtn.Location = new System.Drawing.Point(128, 217);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(164, 43);
             this.saveBtn.TabIndex = 3;
@@ -257,7 +230,7 @@
             this.newClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newClientBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newClientBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.newClientBtn.Location = new System.Drawing.Point(344, 145);
+            this.newClientBtn.Location = new System.Drawing.Point(352, 113);
             this.newClientBtn.Name = "newClientBtn";
             this.newClientBtn.Size = new System.Drawing.Size(139, 29);
             this.newClientBtn.TabIndex = 14;
@@ -272,7 +245,7 @@
             this.dateMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.currentOrdersBindingSource, "Date", true));
             this.dateMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateMaskedTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            this.dateMaskedTextBox.Location = new System.Drawing.Point(120, 44);
+            this.dateMaskedTextBox.Location = new System.Drawing.Point(128, 12);
             this.dateMaskedTextBox.Mask = "00/00/0000";
             this.dateMaskedTextBox.Name = "dateMaskedTextBox";
             this.dateMaskedTextBox.Size = new System.Drawing.Size(363, 26);
@@ -284,7 +257,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(165)))), ((int)(((byte)(173)))));
-            this.ClientSize = new System.Drawing.Size(503, 312);
+            this.ClientSize = new System.Drawing.Size(503, 274);
             this.Controls.Add(this.dateMaskedTextBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.newClientBtn);
@@ -292,8 +265,6 @@
             this.Controls.Add(clientIDLabel);
             this.Controls.Add(this.clientIDComboBox);
             this.Controls.Add(dateLabel);
-            this.Controls.Add(iDLabel);
-            this.Controls.Add(this.iDTextBox);
             this.Controls.Add(masterIDLabel);
             this.Controls.Add(this.masterIDComboBox);
             this.Controls.Add(serviceIDLabel);
@@ -320,7 +291,6 @@
 
         private System.Windows.Forms.BindingSource currentOrdersBindingSource;
         private System.Windows.Forms.ComboBox clientIDComboBox;
-        private System.Windows.Forms.TextBox iDTextBox;
         private System.Windows.Forms.ComboBox masterIDComboBox;
         private System.Windows.Forms.ComboBox serviceIDComboBox;
         private System.Windows.Forms.MaskedTextBox timeMaskedTextBox;

@@ -36,12 +36,9 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.scheduleDataGridView = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specializationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mastersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.TimeNowLbl = new System.Windows.Forms.Label();
             this.FormNameLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -49,7 +46,9 @@
             this.CurrentUserLbl = new System.Windows.Forms.Label();
             this.addBtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specializationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mastersBindingSource)).BeginInit();
             this.HeaderPanel.SuspendLayout();
@@ -111,7 +110,6 @@
             this.scheduleDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(165)))), ((int)(((byte)(173)))));
             this.scheduleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.scheduleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.phoneDataGridViewTextBoxColumn,
             this.specializationDataGridViewTextBoxColumn});
@@ -128,41 +126,6 @@
             this.scheduleDataGridView.TabIndex = 8;
             this.scheduleDataGridView.TabStop = false;
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 45;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Полное имя";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 180;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
-            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 160;
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneDataGridViewTextBoxColumn.Width = 160;
-            // 
-            // specializationDataGridViewTextBoxColumn
-            // 
-            this.specializationDataGridViewTextBoxColumn.DataPropertyName = "Specialization";
-            this.specializationDataGridViewTextBoxColumn.HeaderText = "Специальность";
-            this.specializationDataGridViewTextBoxColumn.MinimumWidth = 150;
-            this.specializationDataGridViewTextBoxColumn.Name = "specializationDataGridViewTextBoxColumn";
-            this.specializationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.specializationDataGridViewTextBoxColumn.Width = 150;
-            // 
             // mastersBindingSource
             // 
             this.mastersBindingSource.DataSource = typeof(BeautySaloonProj.ModelEF.Masters);
@@ -178,6 +141,17 @@
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(1336, 143);
             this.HeaderPanel.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
+            this.label1.Location = new System.Drawing.Point(169, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(271, 29);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Текущая дата и время";
             // 
             // TimeNowLbl
             // 
@@ -249,16 +223,32 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
+            // nameDataGridViewTextBoxColumn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(169, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Текущая дата и время";
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Полное имя";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 180;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
+            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 160;
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // specializationDataGridViewTextBoxColumn
+            // 
+            this.specializationDataGridViewTextBoxColumn.DataPropertyName = "Specialization";
+            this.specializationDataGridViewTextBoxColumn.HeaderText = "Специальность";
+            this.specializationDataGridViewTextBoxColumn.MinimumWidth = 150;
+            this.specializationDataGridViewTextBoxColumn.Name = "specializationDataGridViewTextBoxColumn";
+            this.specializationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.specializationDataGridViewTextBoxColumn.Width = 150;
             // 
             // MastersListForm
             // 
@@ -306,10 +296,9 @@
         private System.Windows.Forms.Label CurrentUserLbl;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specializationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
     }
 }

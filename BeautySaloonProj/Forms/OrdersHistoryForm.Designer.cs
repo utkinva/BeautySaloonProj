@@ -35,24 +35,23 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.scheduleDataGridView = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.masterIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.mastersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.serviceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.FooterPanel = new System.Windows.Forms.Panel();
             this.CurrentUserLbl = new System.Windows.Forms.Label();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.TimeNowLbl = new System.Windows.Forms.Label();
             this.FormNameLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.masterIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.serviceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scheduleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mastersBindingSource)).BeginInit();
@@ -103,7 +102,6 @@
             this.scheduleDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(165)))), ((int)(((byte)(173)))));
             this.scheduleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.scheduleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.timeDataGridViewTextBoxColumn,
             this.clientIDDataGridViewTextBoxColumn,
@@ -123,82 +121,13 @@
             this.scheduleDataGridView.TabStop = false;
             this.scheduleDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.scheduleDataGridView_DataError);
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 45;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 80;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // timeDataGridViewTextBoxColumn
-            // 
-            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
-            this.timeDataGridViewTextBoxColumn.HeaderText = "Время";
-            this.timeDataGridViewTextBoxColumn.MinimumWidth = 60;
-            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
-            this.timeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clientIDDataGridViewTextBoxColumn
-            // 
-            this.clientIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.DataSource = this.clientsBindingSource;
-            this.clientIDDataGridViewTextBoxColumn.DisplayMember = "Name";
-            this.clientIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "Клиент";
-            this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 150;
-            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clientIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clientIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.clientIDDataGridViewTextBoxColumn.ValueMember = "ID";
-            // 
             // clientsBindingSource
             // 
             this.clientsBindingSource.DataSource = typeof(BeautySaloonProj.ModelEF.Clients);
             // 
-            // masterIDDataGridViewTextBoxColumn
-            // 
-            this.masterIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.masterIDDataGridViewTextBoxColumn.DataPropertyName = "MasterID";
-            this.masterIDDataGridViewTextBoxColumn.DataSource = this.mastersBindingSource;
-            this.masterIDDataGridViewTextBoxColumn.DisplayMember = "Name";
-            this.masterIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.masterIDDataGridViewTextBoxColumn.HeaderText = "Мастер";
-            this.masterIDDataGridViewTextBoxColumn.MinimumWidth = 150;
-            this.masterIDDataGridViewTextBoxColumn.Name = "masterIDDataGridViewTextBoxColumn";
-            this.masterIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.masterIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.masterIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.masterIDDataGridViewTextBoxColumn.ValueMember = "ID";
-            // 
             // mastersBindingSource
             // 
             this.mastersBindingSource.DataSource = typeof(BeautySaloonProj.ModelEF.Masters);
-            // 
-            // serviceIDDataGridViewTextBoxColumn
-            // 
-            this.serviceIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.serviceIDDataGridViewTextBoxColumn.DataPropertyName = "ServiceID";
-            this.serviceIDDataGridViewTextBoxColumn.DataSource = this.servicesBindingSource;
-            this.serviceIDDataGridViewTextBoxColumn.DisplayMember = "Title";
-            this.serviceIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.serviceIDDataGridViewTextBoxColumn.HeaderText = "Услуга";
-            this.serviceIDDataGridViewTextBoxColumn.MinimumWidth = 120;
-            this.serviceIDDataGridViewTextBoxColumn.Name = "serviceIDDataGridViewTextBoxColumn";
-            this.serviceIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.serviceIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.serviceIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.serviceIDDataGridViewTextBoxColumn.ValueMember = "ID";
             // 
             // servicesBindingSource
             // 
@@ -240,6 +169,17 @@
             this.HeaderPanel.Size = new System.Drawing.Size(1336, 145);
             this.HeaderPanel.TabIndex = 16;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
+            this.label1.Location = new System.Drawing.Point(169, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(271, 29);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Текущая дата и время";
+            // 
             // TimeNowLbl
             // 
             this.TimeNowLbl.AutoSize = true;
@@ -276,16 +216,66 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
+            // dateDataGridViewTextBoxColumn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(169, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Текущая дата и время";
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 80;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // timeDataGridViewTextBoxColumn
+            // 
+            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
+            this.timeDataGridViewTextBoxColumn.HeaderText = "Время";
+            this.timeDataGridViewTextBoxColumn.MinimumWidth = 60;
+            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
+            this.timeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            this.clientIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.DataSource = this.clientsBindingSource;
+            this.clientIDDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.clientIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "Клиент";
+            this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 150;
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clientIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.clientIDDataGridViewTextBoxColumn.ValueMember = "ID";
+            // 
+            // masterIDDataGridViewTextBoxColumn
+            // 
+            this.masterIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.masterIDDataGridViewTextBoxColumn.DataPropertyName = "MasterID";
+            this.masterIDDataGridViewTextBoxColumn.DataSource = this.mastersBindingSource;
+            this.masterIDDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.masterIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.masterIDDataGridViewTextBoxColumn.HeaderText = "Мастер";
+            this.masterIDDataGridViewTextBoxColumn.MinimumWidth = 150;
+            this.masterIDDataGridViewTextBoxColumn.Name = "masterIDDataGridViewTextBoxColumn";
+            this.masterIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.masterIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.masterIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.masterIDDataGridViewTextBoxColumn.ValueMember = "ID";
+            // 
+            // serviceIDDataGridViewTextBoxColumn
+            // 
+            this.serviceIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.serviceIDDataGridViewTextBoxColumn.DataPropertyName = "ServiceID";
+            this.serviceIDDataGridViewTextBoxColumn.DataSource = this.servicesBindingSource;
+            this.serviceIDDataGridViewTextBoxColumn.DisplayMember = "Title";
+            this.serviceIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.serviceIDDataGridViewTextBoxColumn.HeaderText = "Услуга";
+            this.serviceIDDataGridViewTextBoxColumn.MinimumWidth = 120;
+            this.serviceIDDataGridViewTextBoxColumn.Name = "serviceIDDataGridViewTextBoxColumn";
+            this.serviceIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.serviceIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.serviceIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.serviceIDDataGridViewTextBoxColumn.ValueMember = "ID";
             // 
             // OrdersHistoryForm
             // 
@@ -328,12 +318,6 @@
         private System.Windows.Forms.BindingSource mastersBindingSource;
         private System.Windows.Forms.BindingSource servicesBindingSource;
         private System.Windows.Forms.BindingSource orderHistoryBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn clientIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn masterIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn serviceIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel FooterPanel;
         private System.Windows.Forms.Label CurrentUserLbl;
         private System.Windows.Forms.Panel HeaderPanel;
@@ -342,5 +326,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn clientIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn masterIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn serviceIDDataGridViewTextBoxColumn;
     }
 }
